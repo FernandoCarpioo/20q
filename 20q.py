@@ -59,12 +59,20 @@ def juego():
                 if ask("¿Es un animal?"):
                     # 4) Hábitat
                     if ask("¿Vive la mayor parte del tiempo en el agua?"):
-                        # 5) Rasgos sencillos
-                        if ask("¿Parece sonreír y tiene hocico alargado?"):
-                            leaf("delfín")
+                        # 5) Mamifero o pez
+                        if ask("Es un mamifero marino"):
+                            if ask("Tiene hocico alargado y parece sonreir"):
+                                leaf("delfín")
+                            else:
+                                if ask("Echa agua al respirar por sus aberturas nasales ubicadas en la parte superior de su cabeza?"):
+                                    leaf("ballena")
+                                else:
+                                   if ask("Tiene bigotes anchos y sensibles que le sirven como organos sensoriales para la caza?"):
+                                        leaf("foca")
                         else:
-                            if ask("¿Es muy grande y echa agua por arriba al respirar?"):
-                                leaf("ballena")
+                            if ask("¿Es peligroso para las personas nadar cerca?"):
+                                if ask("Tiene forma alargada y dientes muy afilados"):
+                                    leaf("tiburon")
                             else:
                                 if ask("¿Es peligroso para las personas al nadar cerca?"):
                                     leaf("tiburón")
