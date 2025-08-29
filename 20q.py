@@ -232,23 +232,52 @@ def juego():
                                             else:
                                                 leaf("llave inglesa")
                                 else:
-                                    if ask("¿Es un medio de transporte?"):
-                                        if ask("¿Se mueve con la fuerza humana, sin motor?"):
-                                            leaf("bicicleta")
-                                        else:
-                                            if ask("¿Vuela por el aire?"):
-                                                leaf("avión")
-                                            else:
-                                                if ask("¿Va por rieles?"):
-                                                    leaf("tren")
+                                    #Tipos de transporte
+                                        if ask("¿Es un medio de transporte?"):
+                                            if ask("¿Se mueve con la fuerza humana, sin motor?"):
+                                                if ask("¿Tiene dos ruedas?"):
+                                                    leaf("bicicleta")
                                                 else:
-                                                    if ask("¿Navega en el agua?"):
-                                                        leaf("barco")
+                                                    if ask("¿Tiene una tabla con ruedas?"):
+                                                        leaf("patineta")
                                                     else:
-                                                        if ask("¿Es un vehículo personal de 4 llantas para carretera?"):
-                                                            leaf("coche")
+                                                        leaf("canoa")
+                                            else:
+                                                if ask("¿Vuela por el aire?"):
+                                                    if ask("¿Es más pequeño que un avión y puede tener hélices?"):
+                                                        leaf("helicóptero")
+                                                    else:
+                                                        if ask("¿Es un vehículo aéreo no tripulado controlado a distancia?"):
+                                                            leaf("dron")
                                                         else:
-                                                            leaf("autobús")
+                                                            leaf("avión")
+                                                else:
+                                                    if ask("¿Va por rieles?"):
+                                                        if ask("¿Transporta muchas personas en la ciudad?"):
+                                                            leaf("metro")
+                                                        else:
+                                                            leaf("tren")
+                                                    else:
+                                                        if ask("¿Navega en el agua?"):
+                                                            if ask("¿Es pequeño y se mueve con motor o remos?"):
+                                                                leaf("lancha")
+                                                            else:
+                                                                if ask("¿Es muy grande y transporta personas o mercancía?"):
+                                                                    leaf("barco")
+                                                                else:
+                                                                    leaf("submarino")
+                                                        else:
+                                                            if ask("¿Es un vehículo de dos ruedas con motor?"):
+                                                                leaf("motocicleta")
+                                                            else:
+                                                                if ask("¿Es un vehículo personal de 4 llantas para carretera?"):
+                                                                    leaf("coche")
+                                                                else:
+                                                                    if ask("¿Es muy grande y transporta muchas personas o carga pesada?"):
+                                                                        leaf("camión")
+                                                                    else:
+                                                                        leaf("autobús")
+
                                     else:
                                         if ask("¿Es un juguete que rebota?"):
                                             leaf("pelota")
@@ -412,3 +441,4 @@ def juego():
 
 if __name__ == "__main__":
     juego()
+
