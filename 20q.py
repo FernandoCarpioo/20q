@@ -75,6 +75,12 @@ def juego():
                         if ask("¿Vive con personas en casas o granjas?"):
                             if ask("¿Es una mascota común de casa?"):
                                 if ask("¿Es un canino doméstico?"):
+                                   if ask("Es pequeño y suele ladrar fuerte"):
+                                        leaf("Perro Chihuahua")
+                                
+                                   else:
+                                   
+                                   
                                     leaf("perro")
                                 else:
                                     leaf("gato")
