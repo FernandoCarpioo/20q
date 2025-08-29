@@ -149,21 +149,35 @@ def juego():
                             if ask("¿Cabe en el bolsillo y tiene pantalla táctil?"):
                                 leaf("smartphone")
                             else:
-                                if ask("¿Muestra imagen en una pantalla grande?"):
-                                    leaf("televisor")
+                                if ask("¿Tiene teclado y una pantalla?"):
+                                    leaf("Computadora")
                                 else:
-                                    leaf("radio")
-                        else:
-                            if ask("¿Sirve para guardar comida fría?"):
-                                leaf("refrigerador")
-                            else:
-                                if ask("¿Sirve para calentar comida rápido?"):
-                                    leaf("microondas")
-                                else:
-                                    if ask("¿Sirve para iluminar un cuarto?"):
-                                        leaf("foco")
+                                    if ask("¿Tiene solamente pantalla?"):
+                                        leaf("Televisor")
                                     else:
-                                        leaf("lavadora")
+                                        leaf("Radio")
+                        else:
+                            #6
+                            if ask("¿Tiene bocinas?"):
+                                if ask("¿Esta relacionado con la industria de videojuegos?"):
+                                    leaf("Consola de videojuegos")
+                                else:
+                                    if ask("¿Lo pones en tus o sobre tus oidos para escuchar la musica?"):
+                                        leaf("Audifonos")
+                                    else:
+                                        leaf("Estereo")
+
+                            else:
+                                if ask("¿Sirve para guardar comida fría?"):
+                                    leaf("refrigerador")
+                                else:
+                                    if ask("¿Sirve para calentar comida rápido?"):
+                                        leaf("microondas")
+                                    else:
+                                        if ask("¿Sirve para iluminar un cuarto?"):
+                                            leaf("foco")
+                                        else:
+                                            leaf("lavadora")
                     else:
                         if ask("¿Se usa para comer o beber?"):
                             if ask("¿Sirve para tomar líquidos?"):
