@@ -278,14 +278,14 @@ def juego():
                                                                     else:
                                                                         leaf("autobús")
 
-                                    else:
-                                        if ask("¿Es un juguete que rebota?"):
-                                            leaf("pelota")
                                         else:
-                                            if ask("¿Tiene páginas con texto para leer?"):
-                                                leaf("libro")
+                                            if ask("¿Es un juguete que rebota?"):
+                                                leaf("pelota")
                                             else:
-                                                leaf("cuaderno")
+                                                if ask("¿Tiene páginas con texto para leer?"):
+                                                    leaf("libro")
+                                                else:
+                                                    leaf("cuaderno")
                 else:
                     # NATURAL no fabricado
                     if ask("¿Es una sustancia básica de la naturaleza?"):
