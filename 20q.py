@@ -57,70 +57,73 @@ def juego():
             if ask("¿Es un ser vivo?"):
                 # 3) Animal vs planta/hongo
                 if ask("¿Es un animal?"):
-                    # 4) Hábitat
+                    # 4) Hábitat: acuático vs terrestre
                     if ask("¿Vive la mayor parte del tiempo en el agua?"):
-                        # 5) Mamifero o pez
-                        if ask("Es un mamifero marino"):
-                            if ask("Tiene hocico alargado y parece sonreir"):
+                        # Mamífero marino vs pez
+                        if ask("¿Es un mamífero marino?"):
+                            if ask("¿Tiene hocico alargado y parece sonreír?"):
                                 leaf("delfín")
+                            elif ask("¿Echa agua al respirar por sus aberturas nasales en la parte superior de la cabeza?"):
+                                leaf("ballena")
+                            elif ask("¿Tiene bigotes anchos y sensibles que sirven como órganos sensoriales para la caza?"):
+                                leaf("foca")
+                            elif ask("¿Tiene cuerpo grande, aplanado y se alimenta de pastos marinos?"):
+                                leaf("manatí")
+                            elif ask("¿Es pequeño y parecido a un delfín pero más robusto?"):
+                                leaf("marsopa")
+                            elif ask("¿Tiene colmillos largos y piel gruesa?"):
+                                leaf("morsa")
                             else:
-                                if ask("Echa agua al respirar por sus aberturas nasales ubicadas en la parte superior de su cabeza?"):
-                                    leaf("ballena")
-                                else:
-                                   if ask("Tiene bigotes anchos y sensibles que le sirven como organos sensoriales para la caza?"):
-                                        leaf("foca")
+                                leaf("nutria")  # Mamífero marino común que queda como opción final
                         else:
-                            if ask("¿Es peligroso para las personas nadar cerca?"):
-                                if ask("Tiene forma alargada y dientes muy afilados"):
-                                    leaf("tiburon")
-                            else:
-                                if ask("¿Es peligroso para las personas al nadar cerca?"):
-                                    leaf("tiburón")
-                                else:
-                                    leaf("pez")
+                            leaf("pez")
                     else:
-                        # 5) Doméstico vs silvestre
+                        # Terrestres: domésticos vs salvajes
                         if ask("¿Vive con personas en casas o granjas?"):
+                            # Mascotas vs animales de granja
                             if ask("¿Es una mascota común de casa?"):
                                 if ask("¿Es un canino doméstico?"):
-                                   if ask("Es pequeño y suele ladrar fuerte"):
-                                        leaf("Perro Chihuahua")
-                                
-                                   else:
-                                   
-                                   
                                     leaf("perro")
-                                else:
+                                elif ask("¿Es felino doméstico?"):
                                     leaf("gato")
+                                else:
+                                    leaf("conejo")  # otra mascota frecuente
                             else:
-                                if ask("¿Da leche para consumo?"):
+                                if ask("¿Da leche para consumo humano?"):
                                     leaf("vaca")
+                                elif ask("¿Es un ave de granja que pone huevos?"):
+                                    leaf("gallina")
+                                elif ask("¿Se utiliza para trabajo en granja, transporte o carga?"):
+                                    leaf("caballo")
                                 else:
-                                    if ask("¿Es un ave de granja que pone huevos?"):
-                                        leaf("gallina")
-                                    else:
-                                        leaf("caballo")
+                                    leaf("cerdo")  # otro animal de granja común
                         else:
-                            # 6) Aves vs terrestres grandes
-                            if ask("¿Se mueve volando en el aire?"):
-                                if ask("¿Es un ave grande y cazadora?"):
+                            # Animales salvajes terrestres
+                            if ask("¿Se desplaza principalmente volando?"):
+                                if ask("¿Es un ave grande y depredadora?"):
                                     leaf("águila")
+                                elif ask("¿Es pequeño y bate las alas muy rápido?"):
+                                    leaf("colibrí")
                                 else:
-                                    if ask("¿Es muy pequeño y bate las alas muy rápido?"):
-                                        leaf("colibrí")
-                                    else:
-                                        leaf("loro")
+                                    leaf("loro")  # ave tropical común
                             else:
                                 if ask("¿Es un animal salvaje parecido a un perro?"):
                                     leaf("lobo")
+                                elif ask("¿Es un felino grande con melena?"):
+                                    leaf("león")
+                                elif ask("¿Tiene trompa larga y colmillos visibles?"):
+                                    leaf("elefante")
+                                elif ask("¿Es un animal muy alto con cuello largo que se alimenta de hojas altas?"):
+                                    leaf("jirafa")
+                                elif ask("¿Tiene rayas negras y blancas?"):
+                                    leaf("cebra")
+                                elif ask("¿Es un felino salvaje de tamaño mediano y manchas?"):
+                                    leaf("leopardo")
+                                elif ask("¿Tiene pelaje grueso y come plantas y carne?"):
+                                    leaf("oso")
                                 else:
-                                    if ask("¿Es un felino grande con melena?"):
-                                        leaf("león")
-                                    else:
-                                        if ask("¿Tiene trompa larga?"):
-                                            leaf("elefante")
-                                        else:
-                                            leaf("jirafa")
+                                    leaf("rinoceronte")  # animal terrestre grande que queda como opción final
+
                 else:
                     # 3) Plantas y otros
                     if ask("¿Es una planta?"):
@@ -155,110 +158,136 @@ def juego():
                     else:
                         leaf("hongo")
             else:
-                # NO vivo (objeto o natural)
-                
-                # COMIDA Y BEBIDA
-                if ask("¿Es comida o bebida?"):
-                    if ask("¿Es dulce como un postre o fruta?"):
-                        #FRUTAS
-                        if ask("¿Es una fruta?"):
-
-                            # Frutas que crecen en racimos
-                            if ask("¿Crece en racimos (de un mismo tallo)?"):
-                                if ask("¿Mide entre 1 y 3 cm?"):
-                                    if ask("¿Su cáscara es delgada y puede ser verde, morada o negra?"):
-                                        leaf("uva")
-                                    else:
-                                        leaf("cereza")
-
-                            # Frutas que crecen en árbol
-                            elif ask("¿Crece en un árbol?"):
-                                if ask("¿Es cítrica y se parte en gajos?"):  # naranja y mandarina
-                                    if ask("¿Es naranja y se puede pelar de forma facil con las manos sin necesidad de un cuchillo?"):
-                                        leaf("mandarina")
-                                    else:
-                                        leaf("naranja")
-                                else:
-                                    if ask("¿Es redonda y jugosa?"):
-                                        leaf("manzana")
-                                    else:
-                                        leaf("pera")  # alargada hacia la base
-
-                            # Otras frutas
-                            else:
-                                if ask("¿Es roja y tiene semillas por fuera?"):
-                                    leaf("fresa")
+            # NO vivo (objeto o natural)
                                 
-                                elif ask("¿Se pela y es de color amarillo?"):
-                                    if ask("¿Es alargada y curva y se puede pelar con las manos sin cesedidad de un cuchillo?"):
-                                        leaf("plátano")
-                                    else:
-                                        leaf("piña")
+                # COMIDA O BEBIDA
+                if ask("¿Es comida o bebida?"):
+                    # COMIDA
 
-                                elif ask("¿Es tropical y jugosa?"):
-                                    if ask("¿Tiene un hueso grande en el centro?"):
-                                        if ask("¿Es amarilla por dentro?"):
-                                            leaf("mango")
+                    if ask("¿Es comida?"):
+
+                        if ask("¿Es dulce?"):  # Postres y frutas
+
+                            # Frutas
+                            if ask("¿Es una fruta?"):
+
+                                # Frutas que crecen en racimos
+                                if ask("¿Crece en racimos (de un mismo tallo)?"):
+                                    if ask("¿Mide entre 1 y 3 cm?"):
+                                        if ask("¿Su cáscara es delgada y puede ser verde, morada o negra?"):
+                                            leaf("uva")
                                         else:
-                                            leaf("durazno")
-                                    else:
-                                        if ask("¿Es verde por fuera y roja por dentro con semillas negras?"):
-                                            leaf("sandía")
+                                            leaf("cereza")
+
+                                # Frutas que crecen en árbol
+                                elif ask("¿Crece en un árbol?"):
+                                    if ask("¿Es cítrica y se parte en gajos?"):
+                                        if ask("¿Se pela fácilmente con las manos?"):
+                                            leaf("mandarina")
                                         else:
-                                            leaf("papaya")
+                                            leaf("naranja")
+                                    else:
+                                        if ask("¿Es redonda y jugosa?"):
+                                            leaf("manzana")
+                                        else:
+                                            leaf("pera")
 
+                                # Otras frutas
+                                else:
+                                    if ask("¿Es roja y tiene semillas por fuera?"):
+                                        leaf("fresa")
+                                    elif ask("¿Se pela y es de color amarillo?"):
+                                        if ask("¿Es alargada y curva?"):
+                                            leaf("plátano")
+                                        else:
+                                            leaf("piña")
+                                    elif ask("¿Es tropical y jugosa?"):
+                                        if ask("¿Tiene un hueso grande en el centro?"):
+                                            if ask("¿Es amarilla por dentro?"):
+                                                leaf("mango")
+                                            else:
+                                                leaf("durazno")
+                                        else:
+                                            if ask("¿Es verde por fuera y roja por dentro con semillas negras?"):
+                                                leaf("sandía")
+                                            else:
+                                                leaf("papaya")
 
-                    else:
-                        
-                        if ask("¿Es comida rápida?"):
-                            if ask("¿Es redonda con queso y toppings?"):
-                                leaf("pizza")
+                            # Postres (no frutas)
                             else:
-                                if ask("¿Es carne dentro de pan redondo?"):
+                                if ask("¿Es frío y cremoso?"):
+                                    leaf("helado")
+                                elif ask("¿Es dulce horneado?"):
+                                    leaf("pastel")
+                                elif ask("¿Es pequeño y dulce?"):
+                                    leaf("galletas")
+                                else:
+                                    leaf("gelatina")
+
+                        # Comida salada
+                        else:
+
+                            # Comida rápida
+                            if ask("¿Es comida rápida?"):
+                                if ask("¿Es redonda con queso y toppings?"):
+                                    leaf("pizza")
+                                elif ask("¿Es carne dentro de pan redondo?"):
                                     leaf("hamburguesa")
-                                else:
-                                    if ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
-                                        leaf("taco")
+                                elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
+                                    leaf("taco")
+                                elif ask("¿Se come con palillos?"):
+                                    if ask("¿Es fideos en sopa?"):
+                                        leaf("ramen")
                                     else:
-                                        if ask("¿Se come con palillos?"):
-                                            if ask("¿Es fideos en sopa?"):
-                                                leaf("ramen")
-                                            else:
-                                                leaf("sushi")
-                                        else:
-                                            if ask("¿Es un pan largo con salchicha dentro?"):
-                                                leaf("hot dog")
-                                            else:
-                                                leaf("sandwich")
-                        else:
-                            if ask("¿Es un platillo líquido que se come con cuchara?"):
-                                 leaf("sopa")
-                            else:
-                                if ask("¿Es un platillo hecho principalmente de vegetales?"):
-                                    if ask("¿Se come crudo y puede llevar aderezo?"):
-                                        leaf("ensalada")
+                                        leaf("sushi")
+                                elif ask("¿Es un pan largo con salchicha dentro?"):
+                                    leaf("hot dog")
                                 else:
-                                        if ask("¿Es frío  dulce y cremoso?"):
-                                            leaf("helado")
+                                    leaf("sandwich")
+
+                            # Platillos
+                            elif ask("¿Es un platillo líquido que se come con cuchara?"):
+                                leaf("sopa")
+                            elif ask("¿Es un platillo hecho principalmente de vegetales?"):
+                                if ask("¿Se come crudo y puede llevar aderezo?"):
+                                    leaf("ensalada")
+
+                            # Snacks (salados)
+                            elif ask("¿Es un snack o botana?"):
+                                if ask("¿Es salado y crujiente?"):
+                                    leaf("papas fritas")
+
+                    else:  # bebida
+
+                        if ask("¿Es dulce?"):
+
+                            if ask("¿Es caliente?"):
+                                if ask("¿Contiene café?"):
+                                    leaf("café")
+                                else:
+                                    leaf("chocolate caliente")
+                            else:
+                                if ask("¿Es con gas?"):
+                                    leaf("refresco")
+                                else:
+                                    leaf("jugo")
+
+                        else:  # no dulce
+
+                                if ask("¿Es caliente?"):
+                                    if ask("¿Contiene café?"):
+                                        leaf("café")
+                                    else:
+                                        leaf("té")
+                                else:
+                                    if ask("¿Es con gas?"):
+                                        if ask("Es una bebida alcoholica"):
+                                            leaf("cerveza")
                                         else:
-                                            leaf("gelatina")
-                    if ask("¿Es una bebida?"):
-                        if ask("¿Es caliente?"):
-                            if ask("¿Contiene café?"):
-                                leaf("café")
-                            else:
-                                leaf("té")
-                        else:
-                            if ask("¿Es con gas?"):
-                                leaf("refresco")
-                            else:
-                                leaf("jugo natural")
-                    if ask("¿Es un snack o botana?"):
-                        if ask("¿Es salado y crujiente?"):
-                            leaf("papas fritas")
-                        else:
-                            if ask("¿Es dulce?"):
-                                leaf("galletas")
+                                            leaf("refresco")
+                                    else:
+                                        leaf("agua")
+
 
                 else:
                     
