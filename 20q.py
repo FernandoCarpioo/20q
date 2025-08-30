@@ -385,10 +385,12 @@ def juego():
                                                                             leaf("autobús")
 
                                             else:
-                                                if ask("¿Es un juguete que rebota?"):
-                                                    leaf("Balon/Pelota")
+                                                if ask("¿Es un juguete?"):
+                                                    if ask("¿Es redondo?"):
+                                                        leaf("Balon/Pelota")
+                                                        #Faltan cosas que agregar sobre juguetes
                                                 else:
-                                                    if ask("¿Esta hecho para el aprendizaje aprender?"):
+                                                    if ask("¿Esta hecho para el aprendizaje?"):
                                                         if ask("¿Tiene paginas con texto para leer?"):
                                                             leaf("Libro")
                                                         else:
@@ -401,7 +403,27 @@ def juego():
                                                                 else:
                                                                     if ask ("¿Escribe con grafito?"):
                                                                         leaf ("Lapiz")
-
+                                                                    else:
+                                                                        if ask("¿Se usa para colorear?"):
+                                                                            leaf("Lapices de colores")
+                                                                        else:
+                                                                            if ask("¿Contiene una navaja en su interior?"):
+                                                                                leaf("Sacapuntas")
+                                                                            else:
+                                                                                if ask("¿Tu objeto se usa para corregir errores?"):
+                                                                                    if ask ("¿Esta hecho de goma?"):
+                                                                                        leaf("Goma para borrar")
+                                                                                    else:
+                                                                                        leaf("Corrector")
+                                                                                else:
+                                                                                    if ask("¿El objetivo de tu objeto es  medir?"):
+                                                                                        if ask("¿Tu objeto tiene forma de rectangulo?"):
+                                                                                            leaf("Regla")
+                                                                                        else:
+                                                                                            if ask("¿Tiene forma de triangulo?"):
+                                                                                                leaf("Escuadras")
+                                                                                            else:
+                                                                                                leaf("Transportador")
 
                                                     else:
                                                         if ask("¿Fue hecho para tapar alguna parte del cuerpo?"):
