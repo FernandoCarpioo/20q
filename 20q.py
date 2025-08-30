@@ -386,12 +386,52 @@ def juego():
 
                                             else:
                                                 if ask("¿Es un juguete que rebota?"):
-                                                    leaf("pelota")
+                                                    leaf("Balon/Pelota")
                                                 else:
-                                                    if ask("¿Tiene páginas con texto para leer?"):
-                                                        leaf("libro")
+                                                    if ask("¿Esta hecho para el aprendizaje aprender?"):
+                                                        if ask("¿Tiene paginas con texto para leer?"):
+                                                            leaf("Libro")
+                                                        else:
+                                                            if ask("¿Esta hecho para escribir en el?"):
+                                                                leaf("Cuaderno")
+                                                            else:
+                                                                if ask("¿Se usa para escribir o dibujar cosas?"):
+                                                                    if ask("¿Escribe con tinta?"):
+                                                                        leaf("Pluma")
+                                                                else:
+                                                                    if ask ("¿Escribe con grafito?"):
+                                                                        leaf ("Lapiz")
+
+
                                                     else:
-                                                        leaf("cuaderno")
+                                                        if ask("¿Fue hecho para tapar alguna parte del cuerpo?"):
+                                                            if ask("¿Es un objeto que va arriba de la cintura?"):
+                                                                if ask("¿Tiene una hebilla?"):
+                                                                    leaf("Cinturon")
+                                                                else:
+                                                                    if ask("¿Tu objeto va en la cabeza?"):
+                                                                        if ask("¿Se usa para taparte del sol?"):
+                                                                            leaf("Gorra")
+                                                                        else:
+                                                                            if ask("¿Es una prenda de ropa interior?"):
+                                                                                leaf("Brasier, Corpiño")
+                                                                            else:
+                                                                                leaf("Playera, Camisa, Saco, Blusa, Sueter")
+                                                            else:
+                                                                if ask("¿Sirve para cubrir tus pies?"):
+                                                                    if ask("¿Va directamente sobre la piel del pie?"):
+                                                                        leaf("Calcetin, Tin, Calcetas")
+                                                                    else:
+                                                                      leaf("Zapatos, Tenis, Botas, Zapatillas, Tacones")
+                                                                else:
+                                                                    if ask("¿Es una prenda de ropa interior?"):
+                                                                        leaf("Calzones")
+                                                                    else:
+                                                                        if ask("¿Cubre toda la pierna hasta el tobillo?"):
+                                                                            leaf("Pantalones, Licras")
+                                                                        else:
+                                                                            leaf("Short, Falda")
+
                     else:
                         # NATURAL no fabricado
                         if ask("¿Es una sustancia básica de la naturaleza?"):
