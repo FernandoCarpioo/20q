@@ -658,7 +658,7 @@ def juego():
                                         leaf("artes marciales")
                             else:
                                 leaf("atletismo")
-
+            else:
                 if ask("¿Es un sentimiento?"):
                     if ask("¿Es un sentimiento positivo?"):
                         if ask("¿Es cariño profundo hacia alguien?"):
