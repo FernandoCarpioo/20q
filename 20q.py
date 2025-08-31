@@ -159,6 +159,7 @@ def juego():
                         leaf("hongo")
             else:
             # NO vivo (objeto o natural)
+
                                 
                 # COMIDA O BEBIDA
                 if ask("¿Es comida o bebida?"):
@@ -624,59 +625,93 @@ def juego():
                                                     leaf("viento")
         else:
             # ABSTRACTO (no tangible)
-            if ask("¿Es un sentimiento?"):
-                if ask("¿Es un sentimiento positivo?"):
-                    if ask("¿Es cariño profundo hacia alguien?"):
-                        leaf("amor")
+            if ask("¿Es una actividad o deporte?"):
+                if ask("¿Se juega con una pelota?"):
+                    if ask("¿Se juega con los pies principalmente?"):
+                        leaf("fútbol")
                     else:
-                        leaf("alegría")
-                else:
-                    if ask("¿Es tristeza por una pérdida?"):
-                        leaf("tristeza")
-                    else:
-                        leaf("miedo")
-            else:
-                if ask("¿Es una idea o concepto que se usa para estudiar o pensar?"):
-                    if ask("¿Sirve para contar o medir?"):
-                        leaf("número")
-                    else:
-                        if ask("¿Es la capacidad para hacer algo o producir cambios?"):
-                            leaf("energía")
-                        else:
-                            leaf("conocimiento")
-                else:
-                    if ask("¿Tiene que ver con el tiempo?"):
-                        if ask("¿Ya pasó?"):
-                            leaf("pasado")
-                        else:
-                            if ask("¿Es lo que está ocurriendo ahora?"):
-                                leaf("presente")
+                        if ask("¿Se juega con una red alta en el centro?"):
+                            if ask("¿Se golpea la pelota con las manos?"):
+                                leaf("voleibol")
                             else:
-                                leaf("futuro")
-                    else:
-                        # Filosóficos / generales
-                        if ask("¿Es la existencia de los seres vivos?"):
-                            leaf("vida")
+                                leaf("tenis")
                         else:
-                            if ask("¿Es cuando un ser vivo deja de vivir?"):
-                                leaf("muerte")
+                            if ask("¿Se juega lanzando la pelota a un aro?"):
+                                leaf("baloncesto")
                             else:
-                                if ask("¿Es la ausencia total de cosas?"):
-                                    leaf("nada")
+                                leaf("béisbol")
+                else:
+                    if ask("¿Se practica en el agua?"):
+                        if ask("¿Se nada en carreras?"):
+                            leaf("natación")
+                    else:
+                        if ask("¿Se practica en el hielo?"):
+                            leaf("patinaje sobre hielo")
+                        else:
+                            if ask("¿Se practica con movimientos de defensa y ataque físico?"):
+                                if ask("¿Proviene de Corea y usa muchas patadas altas?"):
+                                    leaf("taekwondo")
                                 else:
-                                    if ask("¿Es un espacio sin materia dentro de algo?"):
-                                        leaf("vacío")
+                                    if ask("¿Proviene de Japón y se centra en golpes con puños y patadas rectas?"):
+                                        leaf("karate")
                                     else:
-                                        if ask("¿Es algo que no tiene límite?"):
-                                            leaf("infinito")
+                                        leaf("artes marciales")
+                            else:
+                                leaf("atletismo")
+
+                if ask("¿Es un sentimiento?"):
+                    if ask("¿Es un sentimiento positivo?"):
+                        if ask("¿Es cariño profundo hacia alguien?"):
+                            leaf("amor")
+                        else:
+                            leaf("alegría")
+                    else:
+                        if ask("¿Es tristeza por una pérdida?"):
+                            leaf("tristeza")
+                        else:
+                            leaf("miedo")
+                else:
+                    if ask("¿Es una idea o concepto que se usa para estudiar o pensar?"):
+                        if ask("¿Sirve para contar o medir?"):
+                            leaf("número")
+                        else:
+                            if ask("¿Es la capacidad para hacer algo o producir cambios?"):
+                                leaf("energía")
+                            else:
+                                leaf("conocimiento")
+                    else:
+                        if ask("¿Tiene que ver con el tiempo?"):
+                            if ask("¿Ya pasó?"):
+                                leaf("pasado")
+                            else:
+                                if ask("¿Es lo que está ocurriendo ahora?"):
+                                    leaf("presente")
+                                else:
+                                    leaf("futuro")
+                        else:
+                            # Filosóficos / generales
+                            if ask("¿Es la existencia de los seres vivos?"):
+                                leaf("vida")
+                            else:
+                                if ask("¿Es cuando un ser vivo deja de vivir?"):
+                                    leaf("muerte")
+                                else:
+                                    if ask("¿Es la ausencia total de cosas?"):
+                                        leaf("nada")
+                                    else:
+                                        if ask("¿Es un espacio sin materia dentro de algo?"):
+                                            leaf("vacío")
                                         else:
-                                            if ask("¿Es poder actuar sin estar obligado?"):
-                                                leaf("libertad")
+                                            if ask("¿Es algo que no tiene límite?"):
+                                                leaf("infinito")
                                             else:
-                                                if ask("¿Es dar a cada quien lo que le corresponde?"):
-                                                    leaf("justicia")
+                                                if ask("¿Es poder actuar sin estar obligado?"):
+                                                    leaf("libertad")
                                                 else:
-                                                    leaf("idea")
+                                                    if ask("¿Es dar a cada quien lo que le corresponde?"):
+                                                        leaf("justicia")
+                                                    else:
+                                                        leaf("idea")
 
     except RuntimeError as e:
         if str(e) == "LIMITE_20":
