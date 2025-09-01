@@ -654,93 +654,246 @@ def juego():
                                                     leaf("viento")
         else:
             # ABSTRACTO (no tangible)
-            if ask("¿Es una actividad o deporte?"):
+
+            # 1) SENTIMIENTOS
+            if ask("¿Es un sentimiento o emoción?"):
+                if ask("¿Es positivo?"):
+                    if ask("¿Es cariño profundo hacia alguien?"):
+                        leaf("amor")
+                    elif ask("¿Es bienestar o satisfacción general?"):
+                        leaf("felicidad")
+                    elif ask("¿Es una emoción repentina de alegría intensa?"):
+                        leaf("entusiasmo")
+                    elif ask("¿Es orgullo por un logro personal o ajeno?"):
+                        leaf("orgullo")
+                    else:
+                        leaf("alegría")
+                else:
+                    if ask("¿Es tristeza por una pérdida o ausencia?"):
+                        leaf("tristeza")
+                    elif ask("¿Es enojo o ira ante algo que molesta?"):
+                        leaf("enojo")
+                    elif ask("¿Es asombro o impresión inesperada?"):
+                        leaf("sorpresa")
+                    elif ask("¿Es incomodidad por ser observado o expuesto?"):
+                        leaf("vergüenza")
+                    elif ask("¿Es culpa por algo que hiciste o dejaste de hacer?"):
+                        leaf("culpa")
+                    elif ask("¿Es repulsión hacia algo desagradable?"):
+                        leaf("asco")
+                    elif ask("¿Es ansiedad o preocupación por lo que pueda pasar?"):
+                        leaf("ansiedad")
+                    else:
+                        leaf("miedo")
+
+            # 2) EVENTOS Y CELEBRACIONES
+            elif ask("¿Es el nombre que se le da a un evento o celebración?"):
+                if ask("¿Es el día en que se conmemora tu nacimiento?"):
+                    leaf("cumpleaños")
+                elif ask("¿Es una celebración cristiana del 25 de diciembre?"):
+                    leaf("navidad")
+                elif ask("¿Es una ceremonia donde dos personas se casan?"):
+                    leaf("boda")
+                else:
+                    leaf("fiesta o día festivo")
+
+
+            # 3) ACTIVIDAD O DEPORTE
+            elif ask("¿Es una actividad o deporte?"):
                 if ask("¿Se juega con una pelota?"):
-                    if ask("¿Se juega con los pies principalmente?"):
+                    if ask("¿Se juega principalmente con los pies?"):
                         leaf("fútbol")
-                    else:
-                        if ask("¿Se juega con una red alta en el centro?"):
-                            if ask("¿Se golpea la pelota con las manos?"):
-                                leaf("voleibol")
-                            else:
-                                leaf("tenis")
+                    elif ask("¿Se juega con una red alta en el centro?"):
+                        if ask("¿Se golpea la pelota con las manos?"):
+                            leaf("voleibol")
                         else:
-                            if ask("¿Se juega lanzando la pelota a un aro?"):
-                                leaf("baloncesto")
-                            else:
-                                leaf("béisbol")
+                            leaf("tenis")
+                    elif ask("¿Se lanza la pelota a un aro?"):
+                        leaf("baloncesto")
+                    else:
+                        leaf("béisbol")
+                elif ask("¿Se practica en el agua?"):
+                    if ask("¿Implica nadar en carreras?"):
+                        leaf("natación")
+                    else:
+                        leaf("deporte acuático")
+                elif ask("¿Se practica en el hielo?"):
+                    leaf("patinaje sobre hielo")
+                elif ask("¿Implica golpes o patadas?"):
+                    if ask("¿Se pelea usando principalmente los puños?"):
+                        leaf("boxeo")
+                    elif ask("¿Es de Corea y usa patadas altas?"):
+                        leaf("taekwondo")
+                    elif ask("¿Es de Japón y usa golpes rectos?"):
+                        leaf("karate")
+                    else:
+                        leaf("artes marciales")
                 else:
-                    if ask("¿Se practica en el agua?"):
-                        if ask("¿Se nada en carreras?"):
-                            leaf("natación")
+                    leaf("atletismo")
+
+
+            # 4) Disciplinas académicas (materias escolares)
+            elif ask("¿Se imparte como materia académica?"):
+
+                # Ciencias formales
+                if ask("¿Pertenece a las ciencias formales de números o lógica?"):
+                    leaf("matemáticas")
+
+                # Ciencias naturales
+                elif ask("¿Pertenece a las ciencias naturales?"):
+                    if ask("¿Se centra en la materia y la energía?"):
+                        leaf("física")
+                    elif ask("¿Se centra en sustancias y transformaciones?"):
+                        leaf("química")
+                    elif ask("¿Se centra en los seres vivos?"):
+                        leaf("biología")
                     else:
-                        if ask("¿Se practica en el hielo?"):
-                            leaf("patinaje sobre hielo")
-                        else:
-                            if ask("¿Se practica con movimientos de defensa y ataque físico?"):
-                                if ask("¿Proviene de Corea y usa muchas patadas altas?"):
-                                    leaf("taekwondo")
-                                else:
-                                    if ask("¿Proviene de Japón y se centra en golpes con puños y patadas rectas?"):
-                                        leaf("karate")
-                                    else:
-                                        leaf("artes marciales")
-                            else:
-                                leaf("atletismo")
+                        leaf("ciencias naturales")
+
+                # Ciencias sociales y humanidades
+                elif ask("¿Pertenece a las ciencias sociales o humanidades?"):
+                    if ask("¿Se centra en hechos del pasado humano?"):
+                        leaf("historia")
+                    elif ask("¿Se centra en la Tierra y sus características?"):
+                        leaf("geografía")
+                    elif ask("Es el amor por la sabiduría"):
+                        leaf("filosofía")
+                    else:
+                        leaf("ciencias sociales")
+
+                # Artes
+                elif ask("¿Pertenece a las artes o la expresión estética?"):
+                    if ask("¿Se expresa con imágenes, pintura o escultura?"):
+                        leaf("arte")
+                    else:
+                        leaf("música")
+
+                # Ciencias de la computación y tecnología
+                elif ask("¿Pertenece a las ciencias de la computación o tecnología?"):
+                    if ask("¿Se centra en la inteligencia artificial?"):
+                        leaf("inteligencia artificial")
+                    elif ask("¿Se centra en el aprendizaje automático de datos?"):
+                        leaf("machine learning")
+                    else:
+                        leaf("informática")
+
+                else:
+                    leaf("materia académica")
+
+
+            # 6) TIEMPO (unidades)
+            elif ask("¿Es una unidad de tiempo?"):
+                # Subdía
+                if ask("¿Es menor que un día?"):
+                    if ask("¿Es la unidad base del tiempo en el SI?"):
+                        leaf("segundo")
+                    elif ask("¿Equivale a 60 segundos?"):
+                        leaf("minuto")
+                    elif ask("¿Equivale a 60 minutos?"):
+                        leaf("hora")
+                    else:
+                        leaf("milisegundo")
+                # Día y múltiplos
+                elif ask("¿Es exactamente 24 horas?"):
+                    leaf("día")
+                elif ask("¿Es aproximadamente 7 días?"):
+                    leaf("semana")
+                elif ask("¿Es aproximadamente 15 días?"):
+                    leaf("quincena")
+                elif ask("¿Es aproximadamente 30 días?"):
+                    leaf("mes")
+                elif ask("¿Es aproximadamente 365 días?"):
+                    leaf("año")
+                elif ask("¿Dura diez años?"):
+                    leaf("década")
+                elif ask("¿Dura cien años?"):
+                    leaf("siglo")
+                elif ask("¿Dura mil años?"):
+                    leaf("milenio")
+                else:
+                    leaf("vida")
+
+
+            # 7) FILOSÓFICOS / GENERALES
             else:
-                if ask("¿Es un sentimiento?"):
-                    if ask("¿Es un sentimiento positivo?"):
-                        if ask("¿Es cariño profundo hacia alguien?"):
-                            leaf("amor")
-                        else:
-                            leaf("alegría")
+                # 7.1 Existencia y universo
+                if ask("¿Tiene que ver con la existencia o el universo?"):
+                    if ask("¿Se refiere a la existencia de los seres vivos?"):
+                        leaf("vida")
+                    elif ask("¿Se refiere al fin de la vida?"):
+                        leaf("muerte")
+                    elif ask("¿Es ausencia total de cosas?"):
+                        leaf("nada")
+                    elif ask("¿Es un espacio sin materia dentro de algo?"):
+                        leaf("vacío")
+                    elif ask("¿No tiene límite?"):
+                        leaf("infinito")
+                    elif ask("¿Se trata del mundo externo, independiente de la mente del observador?"):
+                        leaf("realidad")
+                    elif ask("¿Es la experiencia de estar consciente de ti y del entorno?"):
+                        leaf("conciencia")
+                    elif ask("¿Es la idea de que nuestro futuro ya esta escrito?"):
+                        leaf("destino")
                     else:
-                        if ask("¿Es tristeza por una pérdida?"):
-                            leaf("tristeza")
-                        else:
-                            leaf("miedo")
+                        leaf("existencia")
+
+                # 7.2 Valores y ética
+                elif ask("¿Tiene que ver con valores o ética?"):
+                    if ask("¿Es poder actuar sin obligación?"):
+                        leaf("libertad")
+                    elif ask("¿Es dar a cada quien lo que le corresponde?"):
+                        leaf("justicia")
+                    else:
+                        leaf("ética")
+
+                # 7.3 Espiritualidad y creencias
+                elif ask("¿Tiene que ver con espiritualidad o creencias?"):
+                    leaf("religión")
+
+                # 7.4 Sociedad, gobierno, cultura y trabajo
+                elif ask("¿Tiene que ver con la sociedad o el gobierno?"):
+                    if ask("¿Se refiere a organización y decisiones públicas?"):
+                        leaf("política")
+                    elif ask("¿Se refiere a normas jurídicas obligatorias?"):
+                        leaf("ley")
+                    elif ask("¿Se refiere a costumbres, tradiciones y expresiones de un pueblo?"):
+                        leaf("cultura")
+                    elif ask("¿Se relaciona con ganarse la vida u ocupación?"):
+                        leaf("trabajo")
+                    else:
+                        leaf("sociedad")
+
+                # 7.5 Bienestar personal/colectivo
+                elif ask("¿Tiene que ver con bienestar o armonía?"):
+                    if ask("¿Es un estado de armonía y ausencia de conflicto?"):
+                        leaf("paz")
+                    elif ask("¿Se refiere al bienestar físico o mental?"):
+                        leaf("salud")
+                    else:
+                        leaf("bienestar")
+
+                # 7.6 Relaciones personales
+                elif ask("¿Tiene que ver con relaciones personales cercanas?"):
+                    if ask("Describe vínculos de amistad?"):
+                        leaf("amistad")
+                    else:
+                        leaf("familia")
+
+                # 7.7 Conflicto y cambio
+                elif ask("¿Tiene que ver con conflicto o cambios sociales fuertes?"):
+                    if ask("¿Es uso intencional de la fuerza para dañar o someter?"):
+                        leaf("violencia")
+                    elif ask("¿Es un cambio político o social abrupto?"):
+                        leaf("revolución")
+                    elif ask("¿Es conflicto armado entre grupos o países?"):
+                        leaf("guerra")
+                    else:
+                        leaf("conflicto")
+
+                # 7.8
                 else:
-                    if ask("¿Es una idea o concepto que se usa para estudiar o pensar?"):
-                        if ask("¿Sirve para contar o medir?"):
-                            leaf("número")
-                        else:
-                            if ask("¿Es la capacidad para hacer algo o producir cambios?"):
-                                leaf("energía")
-                            else:
-                                leaf("conocimiento")
-                    else:
-                        if ask("¿Tiene que ver con el tiempo?"):
-                            if ask("¿Ya pasó?"):
-                                leaf("pasado")
-                            else:
-                                if ask("¿Es lo que está ocurriendo ahora?"):
-                                    leaf("presente")
-                                else:
-                                    leaf("futuro")
-                        else:
-                            # Filosóficos / generales
-                            if ask("¿Es la existencia de los seres vivos?"):
-                                leaf("vida")
-                            else:
-                                if ask("¿Es cuando un ser vivo deja de vivir?"):
-                                    leaf("muerte")
-                                else:
-                                    if ask("¿Es la ausencia total de cosas?"):
-                                        leaf("nada")
-                                    else:
-                                        if ask("¿Es un espacio sin materia dentro de algo?"):
-                                            leaf("vacío")
-                                        else:
-                                            if ask("¿Es algo que no tiene límite?"):
-                                                leaf("infinito")
-                                            else:
-                                                if ask("¿Es poder actuar sin estar obligado?"):
-                                                    leaf("libertad")
-                                                else:
-                                                    if ask("¿Es dar a cada quien lo que le corresponde?"):
-                                                        leaf("justicia")
-                                                    else:
-                                                        leaf("idea")
+                    leaf("idea")
+
 
     except RuntimeError as e:
         if str(e) == "LIMITE_20":
