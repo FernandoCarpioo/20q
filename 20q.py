@@ -510,7 +510,18 @@ def juego():
                                                                                                     leaf("Transportador")
 
                                                         else:
+                                                            #Ropa y accesorios 
                                                             if ask("¿Fue hecho para tapar alguna parte del cuerpo?"):
+                                                               if ask("¿Es un accesorio?"):
+                                                                   if ask("¿Se usa en la muñeca?"):
+                                                                            leaf("reloj")
+                                                                      elif ask("¿Se usa en los ojos?"):
+                                                                            leaf("lentes de sol")
+                                                                      elif ask("¿Se usa en las orejas?"):
+                                                                            leaf("aretes")
+                                                                      else:
+                                                                            leaf("collar, pulsera o anillo")
+                                                                else:
                                                                 if ask("¿Es un objeto que va arriba de la cintura?"):
                                                                     if ask("¿Tiene una hebilla?"):
                                                                         leaf("Cinturon")
@@ -727,4 +738,5 @@ def juego():
 
 if __name__ == "__main__":
     juego()
+
 
