@@ -197,7 +197,7 @@ def juego():
                                                                     leaf("Jugador de futbol americano")
                                                                 else:
                                                                     if ask("¿Su funcion es desempeñar que el juego se lleve con forme a las reglas_"):
-                                                                        leaf("Arbirtro")
+                                                                        leaf("Arbitro")
                                                     else:
                                                         if ask("¿Tiene que ver con alguno de las tres ramas de poder del estado en Mexico?"):
                                                             if ask("¿Se encarga de crear y aprobar leyes?"):
@@ -414,8 +414,24 @@ def juego():
                                             if ask("¿Tiene solamente pantalla?"):
                                                 leaf("Televisor")
                                             else:
-                                                if ask("Tiene una antena fisica o necesita de una para funcionar?"):
+                                                if ask("¿Tiene una antena fisica o necesita de una para funcionar?"):
                                                     leaf("Radio")
+                                                else:
+                                                    if ask("¿Es una red global que conecta computadoras, servidores y dispositivos en todo el mundo?"):
+                                                        leaf("Internet")
+                                                    else:
+                                                        if ask("¿Forma parte del universo XBOX, Nintendo, Playstation?"):
+                                                            leaf("Videojuegos")
+                                                        else:
+                                                            if ask("¿Permite crear perfiles, compartir fotos, videos, mensajes y mantener comunicación con otros usuarios?"):
+                                                                leaf("Redes Sociales")
+                                                            else:
+                                                                if ask("¿Es una tecnologia de conexion inalambrica para conectar dispositivos?"):
+                                                                    leaf("WI-FI")
+                                                                else:
+                                                                    if ask("¿Es un dispositivo mecatronico?"):
+                                                                        leaf("Robot")
+
                                 else:
                                     #6
                                     if ask("¿Tiene bocinas?"):
