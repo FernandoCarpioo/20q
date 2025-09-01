@@ -156,7 +156,60 @@ def juego():
                                         else:
                                             leaf("alga")
                     else:
-                        leaf("hongo")
+                        if ask("¿Produce su propio alimento?"):
+                            leaf("Hongo")
+                        else:
+                            if ask("¿Es alguna profesion o rol?"):
+                                if ask("Esta relacionada con el area de la salud"):
+                                    leaf("Doctor(a)/Enfermer@")
+                                else:
+                                    if ask("¿Esta relacionado con el ambito escolar?"):
+                                        if ask("¿Esa profesion se encarga de estar al frente de una escuela?"):
+                                            leaf("Director(a)")
+                                        else:
+                                            if ask("¿Esta profesion su funcion principal es impartir clases? "):
+                                                leaf('Maestr@/Profesor(a)')
+                                    else:
+                                        if ask("¿Esta profesion cuentan con armas de fuego?"):
+                                            if ask("¿Estan especializados en defender la seguridad nacional?"):
+                                                leaf("Militares")
+                                            else:
+                                                if ask("¿Se centran en mantener el orden publico y seguridad del ciudadano?"):
+                                                    leaf("Policias")
+                                        else:
+                                            if ask("¿Esta profesion apaga incendios?"):
+                                                leaf("Bombero")
+                                            else:
+                                                if ask("¿Se dedica relacionado con la musica?"):
+                                                    if ask("¿Su funcion principal es cantar?"):
+                                                        leaf("Cantante")
+                                                    else:
+                                                        leaf("Musico")
+                                                else:
+                                                    if ask("¿Esta relacionado con algun deporte?"):
+                                                        if ask("¿En ese deporte puede desempeñar el rol de portero, defensa, medio o delantero?"):
+                                                            leaf("futbolista")
+                                                        else:
+                                                            if ask("¿Esta relacionado con la NBA?"):
+                                                                leaf("Basquetbolista")
+                                                            else:
+                                                                if ask("¿Puede tomar el rol de coreback?"):
+                                                                    leaf("Jugador de futbol americano")
+                                                                else:
+                                                                    if ask("¿Su funcion es desempeñar que el juego se lleve con forme a las reglas_"):
+                                                                        leaf("Arbirtro")
+                                                    else:
+                                                        if ask("¿Tiene que ver con alguno de las tres ramas de poder del estado en Mexico?"):
+                                                            if ask("¿Se encarga de crear y aprobar leyes?"):
+                                                                if ask("¿Se encarga de representar entidades federativas?"):
+                                                                    leaf("Diputados")
+                                                                else:
+                                                                    if ask("¿Se encarga de representar al pueblo directamente?"):
+                                                                        leaf("Senadores")
+                                                            else:
+                                                                if ask("¿Se encarga de ejecutar las leyes? "):
+                                                                    leaf("Presidente")
+
             else:
             # NO vivo (objeto o natural)
 
@@ -343,8 +396,10 @@ def juego():
                                             else:
                                                 leaf("crema depilatoria")
                                         else:
-                                            
-                                            leaf("algodón o hisopos")
+                                            if ask("¿Es una prenda de ropa interior?"):
+                                                leaf("Calzones")
+                                            else:
+                                                leaf("algodón o hisopos")
                             
                         else:
                         # OBJETOS
@@ -530,13 +585,10 @@ def juego():
                                                                         else:
                                                                             leaf("Zapatos, Tenis, Botas, Zapatillas, Tacones")
                                                                     else:
-                                                                        if ask("¿Es una prenda de ropa interior?"):
-                                                                            leaf("Calzones")
+                                                                        if ask("¿Cubre toda la pierna hasta el tobillo?"):
+                                                                            leaf("Pantalones, Licras")
                                                                         else:
-                                                                            if ask("¿Cubre toda la pierna hasta el tobillo?"):
-                                                                                leaf("Pantalones, Licras")
-                                                                            else:
-                                                                                leaf("Short, Falda")
+                                                                            leaf("Short, Falda")
 
                     else:
                         # NATURAL no fabricado
@@ -558,7 +610,7 @@ def juego():
                                             else:
                                                 leaf("roca")
                         else:
-                            if ask("¿Está en el espacio?"):
+                            if ask("¿Está en el espacio exterior?"):
                                 if ask("¿Brilla por sí mismo como una estrella?"):
                                     if ask("¿Es la estrella de nuestro sistema?"):
                                         leaf("sol")
@@ -610,7 +662,18 @@ def juego():
                                                         if ask("¿Es una zona con muchos árboles?"):
                                                             leaf("bosque")
                                                         else:
-                                                            leaf("volcán")
+                                                            if ask("¿Esta caracterizado por contar con edificios?"):
+                                                                leaf("ciudad")
+                                                            else:
+                                                                if ask("¿A este en especifico van a estudiar?"):
+                                                                    leaf ("Escuela")
+                                                                else:
+                                                                    if ask("¿Es donde se atienden a heridos o enfermos?"):
+                                                                        leaf("Hospital")
+                                                                        if ask("¿En este lugar se proyectan peliculas?"):
+                                                                            leaf("Cine/Cinema")
+                                                                        else:
+                                                                            leaf("volcán")
                                 else:
                                     if ask("¿Es algo del clima o del cielo?"):
                                         if ask("¿Es una nube en el cielo?"):
@@ -623,6 +686,14 @@ def juego():
                                                     leaf("relámpago")
                                                 else:
                                                     leaf("viento")
+
+
+
+
+
+
+
+
         else:
             # ABSTRACTO (no tangible)
             if ask("¿Es una actividad o deporte?"):
