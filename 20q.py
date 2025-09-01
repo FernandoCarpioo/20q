@@ -212,400 +212,435 @@ def juego():
 
             else:
             # NO vivo (objeto o natural)
-
-                                
-                # COMIDA O BEBIDA
-                if ask("¿Es comida o bebida?"):
-                    # COMIDA
-
-                    if ask("¿Es comida?"):
-
-                        if ask("¿Es dulce?"):  # Postres y frutas
-
-                            # Frutas
-                            if ask("¿Es una fruta?"):
-
-                                # Frutas que crecen en racimos
-                                if ask("¿Crece en racimos (de un mismo tallo)?"):
-                                    if ask("¿Mide entre 1 y 3 cm?"):
-                                        if ask("¿Su cáscara es delgada y puede ser verde, morada o negra?"):
-                                            leaf("uva")
-                                        else:
-                                            leaf("cereza")
-
-                                # Frutas que crecen en árbol
-                                elif ask("¿Crece en un árbol?"):
-                                    if ask("¿Es cítrica y se parte en gajos?"):
-                                        if ask("¿Se pela fácilmente con las manos?"):
-                                            leaf("mandarina")
-                                        else:
-                                            leaf("naranja")
-                                    else:
-                                        if ask("¿Es redonda y jugosa?"):
-                                            leaf("manzana")
-                                        else:
-                                            leaf("pera")
-
-                                # Otras frutas
-                                else:
-                                    if ask("¿Es roja y tiene semillas por fuera?"):
-                                        leaf("fresa")
-                                    elif ask("¿Se pela y es de color amarillo?"):
-                                        if ask("¿Es alargada y curva?"):
-                                            leaf("plátano")
-                                        else:
-                                            leaf("piña")
-                                    elif ask("¿Es tropical y jugosa?"):
-                                        if ask("¿Tiene un hueso grande en el centro?"):
-                                            if ask("¿Es amarilla por dentro?"):
-                                                leaf("mango")
-                                            else:
-                                                leaf("durazno")
-                                        else:
-                                            if ask("¿Es verde por fuera y roja por dentro con semillas negras?"):
-                                                leaf("sandía")
-                                            else:
-                                                leaf("papaya")
-
-                            # Postres (no frutas)
-                            else:
-                                if ask("¿Es frío y cremoso?"):
-                                    leaf("helado")
-                                elif ask("¿Es dulce horneado?"):
-                                    leaf("pastel")
-                                elif ask("¿Es pequeño y dulce?"):
-                                    leaf("galletas")
-                                else:
-                                    leaf("gelatina")
-
-                        # Comida salada
+                if ask("¿Es una parte del cuerpo humano o animal?"):
+                    if ask("¿Está en la cabeza?"):
+                        if ask("¿Se usa para ver?"):
+                            leaf("ojo")
+                        elif ask("¿Se usa para escuchar?"):
+                            leaf("oreja")
+                        elif ask("¿Se usa para oler?"):
+                            leaf("nariz")
+                        elif ask("¿Se usa para comer o hablar?"):
+                            leaf("boca")
                         else:
+                            leaf("cabeza")  
+                    elif ask("¿Se usa principalmente para mover, levantar o manipular objetos con los brazos?"):
+                        if ask("¿Se usa para sostener o manipular cosas con precisión?"):
+                            leaf("mano")
+                        elif ask("¿Se usa para levantar, empujar, tirar o mover objetos más grandes?"):
+                              leaf("brazo")
+                        else:
+                            leaf("hombro")  # permite movimiento del brazo
 
-                            # Comida rápida
-                            if ask("¿Es comida rápida?"):
-                                if ask("¿Es redonda con queso y toppings?"):
-                                    leaf("pizza")
-                                elif ask("¿Es carne dentro de pan redondo?"):
-                                    leaf("hamburguesa")
-                                elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
-                                    leaf("taco")
-                                elif ask("¿Se come con palillos?"):
-                                    if ask("¿Es fideos en sopa?"):
-                                        leaf("ramen")
-                                    else:
-                                        leaf("sushi")
-                                elif ask("¿Es un pan largo con salchicha dentro?"):
-                                    leaf("hot dog")
-                                else:
-                                    leaf("sandwich")
-
-                            # Platillos
-                            elif ask("¿Es un platillo líquido que se come con cuchara?"):
-                                leaf("sopa")
-                            elif ask("¿Es un platillo hecho principalmente de vegetales?"):
-                                if ask("¿Se come crudo y puede llevar aderezo?"):
-                                    leaf("ensalada")
-
-                            # Snacks (salados)
-                            elif ask("¿Es un snack o botana?"):
-                                if ask("¿Es salado y crujiente?"):
-                                    leaf("papas fritas")
-
-                    else:  # bebida
-
-                        if ask("¿Es dulce?"):
-
-                            if ask("¿Es caliente?"):
-                                if ask("¿Contiene café?"):
-                                    leaf("café")
-                                else:
-                                    leaf("chocolate caliente")
-                            else:
-                                if ask("¿Es con gas?"):
-                                    leaf("refresco")
-                                else:
-                                    leaf("jugo")
-
-                        else:  # no dulce
-
-                                if ask("¿Es caliente?"):
-                                    if ask("¿Contiene café?"):
-                                        leaf("café")
-                                    else:
-                                        leaf("té")
-                                else:
-                                    if ask("¿Es con gas?"):
-                                        if ask("Es una bebida alcoholica"):
-                                            leaf("cerveza")
-                                        else:
-                                            leaf("refresco")
-                                    else:
-                                        leaf("agua")
+                        if ask("¿Se usa para agarrar cosas?"):
+                            leaf("mano")
+                        elif ask("¿Conecta el brazo al tronco y permite movimiento?”"):
+                            leaf("hombro")
+                        else:
+                            leaf("brazo")
+                    elif ask("¿Está en las piernas o pies?"):
+                        if ask("¿Se usa para caminar o correr?"):
+                            leaf("pierna")
+                        elif ask("¿Se usa para apoyar el cuerpo y equilibrarse?"):
+                            leaf("pie")
+                        else:
+                            leaf("rodilla")
+                    else:
+                        leaf("tronco")
 
 
                 else:
                     
                     if ask("¿Está hecho por humanos?"):
-                        if ask("¿Se usa para el cuidado o higiene personal?"):
-                            # Cabello
-                            if ask("¿Está relacionado con el cabello?"):
-                                if ask("¿Sirve para lavarlo?"):
-                                    if ask("¿Es líquido dentro de un envase?"):
-                                        leaf("shampoo")
-                                    else:
-                                        leaf("acondicionador")
-                                else:
-                                    if ask("¿Sirve para desenredar o acomodar el cabello?"):
-                                        leaf("peine")
-                                    else:
-                                        leaf("cepillo para cabello")
-                            elif ask("¿Sirve para limpiar el cuerpo?"):
-                                if ask("¿Es sólido y se frota directamente?"):
-                                    leaf("jabón en barra")
-                            elif ask("¿Está relacionado con los dientes?"):
-                                if ask("¿Sirve para cepillarlos?"):
-                                    if ask("¿Tiene cerdas?"):
-                                        leaf("cepillo de dientes")
-                                else:
-                                    if ask("¿Es una pasta?"):
-                                        leaf("pasta dental")
-                                    else:
-                                        leaf("enjuague bucal")
-                            else:
-                                if ask("¿Sirve para después de bañarse o asearse?"):
-                                    if ask("¿Absorbe agua del cuerpo?"):
-                                        leaf("toalla")
-                                    else:
-                                        if ask("¿Sirve para evitar el mal olor corporal?"):
-                                            leaf("desodorante")
-                                        else:
-                                            leaf("loción/perfume")
-                                else:
-                                    if ask("¿Es para las manos y uñas?"):
-                                        if ask("¿Corta las uñas?"):
-                                            leaf("cortaúñas")
-                                        else:
-                                            if ask("¿Sirve para limar las uñas?"):
-                                                leaf("lima de uñas")
+                        # COMIDA O BEBIDA
+                        if ask("¿Es comida o bebida?"):
+                            # COMIDA
+
+                            if ask("¿Es comida?"):
+
+                                if ask("¿Es dulce?"):  # Postres y frutas
+
+                                    # Frutas
+                                    if ask("¿Es una fruta?"):
+
+                                        # Frutas que crecen en racimos
+                                        if ask("¿Crece en racimos (de un mismo tallo)?"):
+                                            if ask("¿Mide entre 1 y 3 cm?"):
+                                                if ask("¿Su cáscara es delgada y puede ser verde, morada o negra?"):
+                                                    leaf("uva")
+                                                else:
+                                                    leaf("cereza")
+
+                                        # Frutas que crecen en árbol
+                                        elif ask("¿Crece en un árbol?"):
+                                            if ask("¿Es cítrica y se parte en gajos?"):
+                                                if ask("¿Se pela fácilmente con las manos?"):
+                                                    leaf("mandarina")
+                                                else:
+                                                    leaf("naranja")
                                             else:
-                                                leaf("esmalte de uñas")
-                                    else:
-                                        if ask("¿Sirve para rasurarse o depilarse?"):
-                                            if ask("¿Es desechable con cuchillas?"):
-                                                leaf("rastrillo/afeitadora manual")
-                                            else:
-                                                leaf("crema depilatoria")
+                                                if ask("¿Es redonda y jugosa?"):
+                                                    leaf("manzana")
+                                                else:
+                                                    leaf("pera")
+
+                                        # Otras frutas
                                         else:
-                                            if ask("¿Es una prenda de ropa interior?"):
-                                                leaf("Calzones")
+                                            if ask("¿Es roja y tiene semillas por fuera?"):
+                                                leaf("fresa")
+                                            elif ask("¿Se pela y es de color amarillo?"):
+                                                if ask("¿Es alargada y curva?"):
+                                                    leaf("plátano")
+                                                else:
+                                                    leaf("piña")
+                                            elif ask("¿Es tropical y jugosa?"):
+                                                if ask("¿Tiene un hueso grande en el centro?"):
+                                                    if ask("¿Es amarilla por dentro?"):
+                                                        leaf("mango")
+                                                    else:
+                                                        leaf("durazno")
+                                                else:
+                                                    if ask("¿Es verde por fuera y roja por dentro con semillas negras?"):
+                                                        leaf("sandía")
+                                                    else:
+                                                        leaf("papaya")
+
+                                    # Postres (no frutas)
+                                    else:
+                                        if ask("¿Es frío y cremoso?"):
+                                            leaf("helado")
+                                        elif ask("¿Es dulce horneado?"):
+                                            leaf("pastel")
+                                        elif ask("¿Es pequeño y dulce?"):
+                                            leaf("galletas")
+                                        else:
+                                            leaf("gelatina")
+
+                                # Comida salada
+                                else:
+
+                                    # Comida rápida
+                                    if ask("¿Es comida rápida?"):
+                                        if ask("¿Es redonda con queso y toppings?"):
+                                            leaf("pizza")
+                                        elif ask("¿Es carne dentro de pan redondo?"):
+                                            leaf("hamburguesa")
+                                        elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
+                                            leaf("taco")
+                                        elif ask("¿Se come con palillos?"):
+                                            if ask("¿Es fideos en sopa?"):
+                                                leaf("ramen")
                                             else:
-                                                leaf("algodón o hisopos")
-                            
+                                                leaf("sushi")
+                                        elif ask("¿Es un pan largo con salchicha dentro?"):
+                                            leaf("hot dog")
+                                        else:
+                                            leaf("sandwich")
+
+                                    # Platillos
+                                    elif ask("¿Es un platillo líquido que se come con cuchara?"):
+                                        leaf("sopa")
+                                    elif ask("¿Es un platillo hecho principalmente de vegetales?"):
+                                        if ask("¿Se come crudo y puede llevar aderezo?"):
+                                            leaf("ensalada")
+
+                                    # Snacks (salados)
+                                    elif ask("¿Es un snack o botana?"):
+                                        if ask("¿Es salado y crujiente?"):
+                                            leaf("papas fritas")
+
+                            else:  # bebida
+
+                                if ask("¿Es dulce?"):
+
+                                    if ask("¿Es caliente?"):
+                                        if ask("¿Contiene café?"):
+                                            leaf("café")
+                                        else:
+                                            leaf("chocolate caliente")
+                                    else:
+                                        if ask("¿Es con gas?"):
+                                            leaf("refresco")
+                                        else:
+                                            leaf("jugo")
+
+                                else:  # no dulce
+
+                                        if ask("¿Es caliente?"):
+                                            if ask("¿Contiene café?"):
+                                                leaf("café")
+                                            else:
+                                                leaf("té")
+                                        else:
+                                            if ask("¿Es con gas?"):
+                                                if ask("Es una bebida alcoholica"):
+                                                    leaf("cerveza")
+                                                else:
+                                                    leaf("refresco")
+                                            else:
+                                                leaf("agua")
+
                         else:
-                        # OBJETOS
-                            if ask("¿Funciona con electricidad?"):
-                                if ask("¿Se usa para comunicarse o informarse?"):
-                                    if ask("¿Cabe en el bolsillo y tiene pantalla táctil?"):
-                                        leaf("smartphone")
-                                    else:
-                                        if ask("¿Tiene teclado y una pantalla?"):
-                                            leaf("Computadora")
+                            if ask("¿Se usa para el cuidado o higiene personal?"):
+                                # Cabello
+                                if ask("¿Está relacionado con el cabello?"):
+                                    if ask("¿Sirve para lavarlo?"):
+                                        if ask("¿Es líquido dentro de un envase?"):
+                                            leaf("shampoo")
                                         else:
-                                            if ask("¿Tiene solamente pantalla?"):
-                                                leaf("Televisor")
-                                            else:
-                                                if ask("¿Tiene una antena fisica o necesita de una para funcionar?"):
-                                                    leaf("Radio")
-                                                else:
-                                                    if ask("¿Es una red global que conecta computadoras, servidores y dispositivos en todo el mundo?"):
-                                                        leaf("Internet")
-                                                    else:
-                                                        if ask("¿Forma parte del universo XBOX, Nintendo, Playstation?"):
-                                                            leaf("Videojuegos")
-                                                        else:
-                                                            if ask("¿Permite crear perfiles, compartir fotos, videos, mensajes y mantener comunicación con otros usuarios?"):
-                                                                leaf("Redes Sociales")
-                                                            else:
-                                                                if ask("¿Es una tecnologia de conexion inalambrica para conectar dispositivos?"):
-                                                                    leaf("WI-FI")
-                                                                else:
-                                                                    if ask("¿Es un dispositivo mecatronico?"):
-                                                                        leaf("Robot")
-
+                                            leaf("acondicionador")
+                                    else:
+                                        if ask("¿Sirve para desenredar o acomodar el cabello?"):
+                                            leaf("peine")
+                                        else:
+                                            leaf("cepillo para cabello")
+                                elif ask("¿Sirve para limpiar el cuerpo?"):
+                                    if ask("¿Es sólido y se frota directamente?"):
+                                        leaf("jabón en barra")
+                                elif ask("¿Está relacionado con los dientes?"):
+                                    if ask("¿Sirve para cepillarlos?"):
+                                        if ask("¿Tiene cerdas?"):
+                                            leaf("cepillo de dientes")
+                                    else:
+                                        if ask("¿Es una pasta?"):
+                                            leaf("pasta dental")
+                                        else:
+                                            leaf("enjuague bucal")
                                 else:
-                                    #6
-                                    if ask("¿Tiene bocinas?"):
-                                        if ask("¿Esta relacionado con la industria de videojuegos?"):
-                                            leaf("Consola de videojuegos")
+                                    if ask("¿Sirve para después de bañarse o asearse?"):
+                                        if ask("¿Absorbe agua del cuerpo?"):
+                                            leaf("toalla")
                                         else:
-                                            if ask("¿Lo pones en tus o sobre tus oidos para escuchar la musica?"):
-                                                leaf("Audifonos")
+                                            if ask("¿Sirve para evitar el mal olor corporal?"):
+                                                leaf("desodorante")
                                             else:
-                                                leaf("Estereo")
-
+                                                leaf("loción/perfume")
                                     else:
-                                        if ask("¿Sirve para guardar comida fría?"):
-                                            leaf("refrigerador")
-                                        else:
-                                            if ask("¿Sirve para calentar comida rápido?"):
-                                                leaf("microondas")
+                                        if ask("¿Es para las manos y uñas?"):
+                                            if ask("¿Corta las uñas?"):
+                                                leaf("cortaúñas")
                                             else:
-                                                if ask("¿Sirve para iluminar un cuarto?"):
-                                                    leaf("foco")
+                                                if ask("¿Sirve para limar las uñas?"):
+                                                    leaf("lima de uñas")
                                                 else:
-                                                    leaf("lavadora")
+                                                    leaf("esmalte de uñas")
+                                        else:
+                                            if ask("¿Sirve para rasurarse o depilarse?"):
+                                                if ask("¿Es desechable con cuchillas?"):
+                                                    leaf("rastrillo/afeitadora manual")
+                                                else:
+                                                    leaf("crema depilatoria")
+                                            else:
+                                                if ask("¿Es una prenda de ropa interior?"):
+                                                    leaf("Calzones")
+                                                else:
+                                                    leaf("algodón o hisopos")
+                                
                             else:
-                                if ask("¿Se usa para comer o beber?"):
-                                    if ask("¿Sirve para tomar líquidos?"):
-                                        if ask("¿Tiene cuello y tapa?"):
-                                            leaf("botella")
+                            # OBJETOS
+                                if ask("¿Funciona con electricidad?"):
+                                    if ask("¿Se usa para comunicarse o informarse?"):
+                                        if ask("¿Cabe en el bolsillo y tiene pantalla táctil?"):
+                                            leaf("smartphone")
                                         else:
-                                            leaf("vaso")
-                                    else:
-                                        if ask("¿Es cóncavo y sirve para sopa?"):
-                                            leaf("cuchara")
-                                        else:
-                                            if ask("¿Tiene púas para pinchar comida?"):
-                                                leaf("tenedor")
+                                            if ask("¿Tiene teclado y una pantalla?"):
+                                                leaf("Computadora")
                                             else:
-                                                leaf("cuchillo")
+                                                if ask("¿Tiene solamente pantalla?"):
+                                                    leaf("Televisor")
+                                                else:
+                                                    if ask("¿Tiene una antena fisica o necesita de una para funcionar?"):
+                                                        leaf("Radio")
+                                                    else:
+                                                        if ask("¿Es una red global que conecta computadoras, servidores y dispositivos en todo el mundo?"):
+                                                            leaf("Internet")
+                                                        else:
+                                                            if ask("¿Forma parte del universo XBOX, Nintendo, Playstation?"):
+                                                                leaf("Videojuegos")
+                                                            else:
+                                                                if ask("¿Permite crear perfiles, compartir fotos, videos, mensajes y mantener comunicación con otros usuarios?"):
+                                                                    leaf("Redes Sociales")
+                                                                else:
+                                                                    if ask("¿Es una tecnologia de conexion inalambrica para conectar dispositivos?"):
+                                                                        leaf("WI-FI")
+                                                                    else:
+                                                                        if ask("¿Es un dispositivo mecatronico?"):
+                                                                            leaf("Robot")
+
+                                    else:
+                                        #6
+                                        if ask("¿Tiene bocinas?"):
+                                            if ask("¿Esta relacionado con la industria de videojuegos?"):
+                                                leaf("Consola de videojuegos")
+                                            else:
+                                                if ask("¿Lo pones en tus o sobre tus oidos para escuchar la musica?"):
+                                                    leaf("Audifonos")
+                                                else:
+                                                    leaf("Estereo")
+
+                                        else:
+                                            if ask("¿Sirve para guardar comida fría?"):
+                                                leaf("refrigerador")
+                                            else:
+                                                if ask("¿Sirve para calentar comida rápido?"):
+                                                    leaf("microondas")
+                                                else:
+                                                    if ask("¿Sirve para iluminar un cuarto?"):
+                                                        leaf("foco")
+                                                    else:
+                                                        leaf("lavadora")
                                 else:
-                                    if ask("¿Es un mueble?"):
-                                        if ask("¿Sirve para sentarse?"):
-                                            leaf("silla")
-                                        else:
-                                            if ask("¿Sirve para poner cosas encima para comer o trabajar?"):
-                                                leaf("mesa")
+                                    if ask("¿Se usa para comer o beber?"):
+                                        if ask("¿Sirve para tomar líquidos?"):
+                                            if ask("¿Tiene cuello y tapa?"):
+                                                leaf("botella")
                                             else:
-                                                if ask("¿Sirve para dormir?"):
-                                                    leaf("cama")
+                                                leaf("vaso")
+                                        else:
+                                            if ask("¿Es cóncavo y sirve para sopa?"):
+                                                leaf("cuchara")
+                                            else:
+                                                if ask("¿Tiene púas para pinchar comida?"):
+                                                    leaf("tenedor")
                                                 else:
-                                                    leaf("escritorio")
+                                                    leaf("cuchillo")
                                     else:
-                                        if ask("¿Es una herramienta manual?"):
-                                            if ask("¿Sirve para golpear clavos?"):
-                                                leaf("martillo")
+                                        if ask("¿Es un mueble?"):
+                                            if ask("¿Sirve para sentarse?"):
+                                                leaf("silla")
                                             else:
-                                                if ask("¿Sirve para atornillar o desatornillar?"):
-                                                    leaf("destornillador")
+                                                if ask("¿Sirve para poner cosas encima para comer o trabajar?"):
+                                                    leaf("mesa")
                                                 else:
-                                                    if ask("¿Corta al cerrar dos hojas?"):
-                                                        leaf("tijeras")
+                                                    if ask("¿Sirve para dormir?"):
+                                                        leaf("cama")
                                                     else:
-                                                        leaf("llave inglesa")
+                                                        leaf("escritorio")
                                         else:
-                                            #Tipos de transporte
-                                                if ask("¿Es un medio de transporte?"):
-                                                    if ask("¿Se mueve con la fuerza humana, sin motor?"):
-                                                        if ask("¿Tiene dos ruedas?"):
-                                                            leaf("bicicleta")
-                                                        else:
-                                                            if ask("¿Tiene una tabla con ruedas?"):
-                                                                leaf("patineta")
-                                                            else:
-                                                                leaf("canoa")
-                                                    else:
-                                                        if ask("¿Vuela por el aire?"):
-                                                            if ask("¿Es más pequeño que un avión y puede tener hélices?"):
-                                                                leaf("helicóptero")
-                                                            else:
-                                                                if ask("¿Es un vehículo aéreo no tripulado controlado a distancia?"):
-                                                                    leaf("dron")
-                                                                else:
-                                                                    leaf("avión")
-                                                        else:
-                                                            if ask("¿Va por rieles?"):
-                                                                if ask("¿Transporta muchas personas en la ciudad?"):
-                                                                    leaf("metro")
-                                                                else:
-                                                                    leaf("tren")
-                                                            else:
-                                                                if ask("¿Navega en el agua?"):
-                                                                    if ask("¿Es pequeño y se mueve con motor o remos?"):
-                                                                        leaf("lancha")
-                                                                    else:
-                                                                        if ask("¿Es muy grande y transporta personas o mercancía?"):
-                                                                            leaf("barco")
-                                                                        else:
-                                                                            leaf("submarino")
-                                                                else:
-                                                                    if ask("¿Es un vehículo de dos ruedas con motor?"):
-                                                                        leaf("motocicleta")
-                                                                    else:
-                                                                        if ask("¿Es un vehículo personal de 4 llantas para carretera?"):
-                                                                            leaf("coche")
-                                                                        else:
-                                                                            if ask("¿Es muy grande y transporta muchas personas o carga pesada?"):
-                                                                                leaf("camión")
-                                                                            else:
-                                                                                leaf("autobús")
-
+                                            if ask("¿Es una herramienta manual?"):
+                                                if ask("¿Sirve para golpear clavos?"):
+                                                    leaf("martillo")
                                                 else:
-                                                    if ask("¿Es un juguete?"):
-                                                        if ask("¿Es redondo?"):
-                                                            leaf("Balon/Pelota")
-                                                            #Faltan cosas que agregar sobre juguetes
+                                                    if ask("¿Sirve para atornillar o desatornillar?"):
+                                                        leaf("destornillador")
                                                     else:
-                                                        if ask("¿Esta hecho para el aprendizaje?"):
-                                                            if ask("¿Tiene paginas con texto para leer?"):
-                                                                leaf("Libro")
-                                                            else:
-                                                                if ask("¿Esta hecho para escribir en el?"):
-                                                                    leaf("Cuaderno")
-                                                                else:
-                                                                    if ask("¿Se usa para escribir o dibujar cosas?"):
-                                                                        if ask("¿Escribe con tinta?"):
-                                                                            leaf("Pluma")
-                                                                    else:
-                                                                        if ask ("¿Escribe con grafito?"):
-                                                                            leaf ("Lapiz")
-                                                                        else:
-                                                                            if ask("¿Se usa para colorear?"):
-                                                                                leaf("Lapices de colores")
-                                                                            else:
-                                                                                if ask("¿Contiene una navaja en su interior?"):
-                                                                                    leaf("Sacapuntas")
-                                                                                else:
-                                                                                    if ask("¿Tu objeto se usa para corregir errores?"):
-                                                                                        if ask ("¿Esta hecho de goma?"):
-                                                                                            leaf("Goma para borrar")
-                                                                                        else:
-                                                                                            leaf("Corrector")
-                                                                                    else:
-                                                                                        if ask("¿El objetivo de tu objeto es  medir?"):
-                                                                                            if ask("¿Tu objeto tiene forma de rectangulo?"):
-                                                                                                leaf("Regla")
-                                                                                            else:
-                                                                                                if ask("¿Tiene forma de triangulo?"):
-                                                                                                    leaf("Escuadras")
-                                                                                                else:
-                                                                                                    leaf("Transportador")
-
+                                                        if ask("¿Corta al cerrar dos hojas?"):
+                                                            leaf("tijeras")
                                                         else:
-                                                            if ask("¿Fue hecho para tapar alguna parte del cuerpo?"):
-                                                                if ask("¿Es un objeto que va arriba de la cintura?"):
-                                                                    if ask("¿Tiene una hebilla?"):
-                                                                        leaf("Cinturon")
-                                                                    else:
-                                                                        if ask("¿Tu objeto va en la cabeza?"):
-                                                                            if ask("¿Se usa para taparte del sol?"):
-                                                                                leaf("Gorra")
-                                                                            else:
-                                                                                if ask("¿Es una prenda de ropa interior?"):
-                                                                                    leaf("Brasier, Corpiño")
-                                                                                else:
-                                                                                    leaf("Playera, Camisa, Saco, Blusa, Sueter")
+                                                            leaf("llave inglesa")
+                                            else:
+                                                #Tipos de transporte
+                                                    if ask("¿Es un medio de transporte?"):
+                                                        if ask("¿Se mueve con la fuerza humana, sin motor?"):
+                                                            if ask("¿Tiene dos ruedas?"):
+                                                                leaf("bicicleta")
+                                                            else:
+                                                                if ask("¿Tiene una tabla con ruedas?"):
+                                                                    leaf("patineta")
                                                                 else:
-                                                                    if ask("¿Sirve para cubrir tus pies?"):
-                                                                        if ask("¿Va directamente sobre la piel del pie?"):
-                                                                            leaf("Calcetin, Tin, Calcetas")
-                                                                        else:
-                                                                            leaf("Zapatos, Tenis, Botas, Zapatillas, Tacones")
+                                                                    leaf("canoa")
+                                                        else:
+                                                            if ask("¿Vuela por el aire?"):
+                                                                if ask("¿Es más pequeño que un avión y puede tener hélices?"):
+                                                                    leaf("helicóptero")
+                                                                else:
+                                                                    if ask("¿Es un vehículo aéreo no tripulado controlado a distancia?"):
+                                                                        leaf("dron")
                                                                     else:
-                                                                        if ask("¿Cubre toda la pierna hasta el tobillo?"):
-                                                                            leaf("Pantalones, Licras")
+                                                                        leaf("avión")
+                                                            else:
+                                                                if ask("¿Va por rieles?"):
+                                                                    if ask("¿Transporta muchas personas en la ciudad?"):
+                                                                        leaf("metro")
+                                                                    else:
+                                                                        leaf("tren")
+                                                                else:
+                                                                    if ask("¿Navega en el agua?"):
+                                                                        if ask("¿Es pequeño y se mueve con motor o remos?"):
+                                                                            leaf("lancha")
                                                                         else:
-                                                                            leaf("Short, Falda")
+                                                                            if ask("¿Es muy grande y transporta personas o mercancía?"):
+                                                                                leaf("barco")
+                                                                            else:
+                                                                                leaf("submarino")
+                                                                    else:
+                                                                        if ask("¿Es un vehículo de dos ruedas con motor?"):
+                                                                            leaf("motocicleta")
+                                                                        else:
+                                                                            if ask("¿Es un vehículo personal de 4 llantas para carretera?"):
+                                                                                leaf("coche")
+                                                                            else:
+                                                                                if ask("¿Es muy grande y transporta muchas personas o carga pesada?"):
+                                                                                    leaf("camión")
+                                                                                else:
+                                                                                    leaf("autobús")
+
+                                                    else:
+                                                        if ask("¿Es un juguete?"):
+                                                            if ask("¿Es redondo?"):
+                                                                leaf("Balon/Pelota")
+                                                                #Faltan cosas que agregar sobre juguetes
+                                                        else:
+                                                            if ask("¿Esta hecho para el aprendizaje?"):
+                                                                if ask("¿Tiene paginas con texto para leer?"):
+                                                                    leaf("Libro")
+                                                                else:
+                                                                    if ask("¿Esta hecho para escribir en el?"):
+                                                                        leaf("Cuaderno")
+                                                                    else:
+                                                                        if ask("¿Se usa para escribir o dibujar cosas?"):
+                                                                            if ask("¿Escribe con tinta?"):
+                                                                                leaf("Pluma")
+                                                                        else:
+                                                                            if ask ("¿Escribe con grafito?"):
+                                                                                leaf ("Lapiz")
+                                                                            else:
+                                                                                if ask("¿Se usa para colorear?"):
+                                                                                    leaf("Lapices de colores")
+                                                                                else:
+                                                                                    if ask("¿Contiene una navaja en su interior?"):
+                                                                                        leaf("Sacapuntas")
+                                                                                    else:
+                                                                                        if ask("¿Tu objeto se usa para corregir errores?"):
+                                                                                            if ask ("¿Esta hecho de goma?"):
+                                                                                                leaf("Goma para borrar")
+                                                                                            else:
+                                                                                                leaf("Corrector")
+                                                                                        else:
+                                                                                            if ask("¿El objetivo de tu objeto es  medir?"):
+                                                                                                if ask("¿Tu objeto tiene forma de rectangulo?"):
+                                                                                                    leaf("Regla")
+                                                                                                else:
+                                                                                                    if ask("¿Tiene forma de triangulo?"):
+                                                                                                        leaf("Escuadras")
+                                                                                                    else:
+                                                                                                        leaf("Transportador")
+
+                                                            else:
+                                                                if ask("¿Fue hecho para tapar alguna parte del cuerpo?"):
+                                                                    if ask("¿Es un objeto que va arriba de la cintura?"):
+                                                                        if ask("¿Tiene una hebilla?"):
+                                                                            leaf("Cinturon")
+                                                                        else:
+                                                                            if ask("¿Tu objeto va en la cabeza?"):
+                                                                                if ask("¿Se usa para taparte del sol?"):
+                                                                                    leaf("Gorra")
+                                                                                else:
+                                                                                    if ask("¿Es una prenda de ropa interior?"):
+                                                                                        leaf("Brasier, Corpiño")
+                                                                                    else:
+                                                                                        leaf("Playera, Camisa, Saco, Blusa, Sueter")
+                                                                    else:
+                                                                        if ask("¿Sirve para cubrir tus pies?"):
+                                                                            if ask("¿Va directamente sobre la piel del pie?"):
+                                                                                leaf("Calcetin, Tin, Calcetas")
+                                                                            else:
+                                                                                leaf("Zapatos, Tenis, Botas, Zapatillas, Tacones")
+                                                                        else:
+                                                                            if ask("¿Cubre toda la pierna hasta el tobillo?"):
+                                                                                leaf("Pantalones, Licras")
+                                                                            else:
+                                                                                leaf("Short, Falda")
 
                     else:
                         # NATURAL no fabricado
@@ -806,8 +841,6 @@ def juego():
             fin_limite()
         else:
             raise
-
-
 
 # ============================
 # Main
