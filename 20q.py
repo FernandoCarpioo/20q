@@ -325,60 +325,38 @@ def juego():
                                                         leaf("sandía")
                                                     else:
                                                         leaf("papaya")
-                                    else:
-                                        if ask("¿Es dulce y se sirve como postre?"):
-                                            if ask("¿Es un cremoso hecho con huevo y leche sin hornear?"):
-                                                leaf("flan")
-                                            elif ask("¿Es masa frita en forma alargada y espolvoreada con azúcar?"):
-                                                leaf("churro")
-                                        else:   
-                                            if ask("¿Es frío y cremoso?"):
-                                                leaf("helado")
-                                            elif ask("¿Es dulce horneado?"):
-                                                leaf("pastel")
-                                            elif ask("¿Es pequeño y dulce?"):
-                                                leaf("galletas")
-                                            else:
-                                                leaf("gelatina")
 
+                                    # Postres (no frutas)
+                                    else:
+                                        if ask("¿Es frío y cremoso?"):
+                                            leaf("helado")
+                                        elif ask("¿Es dulce horneado?"):
+                                            leaf("pastel")
+                                        elif ask("¿Es pequeño y dulce?"):
+                                            leaf("galletas")
+                                        else:
+                                            leaf("gelatina")
 
                                 # Comida salada
                                 else:
-                                   if ask("¿Es típica de restaurantes o puestos de comida rápida internacional?"):
-                                    if ask("¿Es redonda con queso y toppings?"):
-                                        leaf("pizza")
-                                    elif ask("¿Es carne dentro de pan redondo?"):
-                                        leaf("hamburguesa")
-                                    elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
-                                        if ask("¿Es un plato mexicano envuelto en tortilla con relleno?"):
-                                            leaf("burrito")
-                                        else:
-                                            leaf("taco")
-                                    elif ask("¿Se come con palillos?"):
-                                        if ask("¿Es fideos en sopa?"):
-                                            leaf("ramen")
-                                        else:
-                                            leaf("sushi")
-                                    elif ask("¿Es un pan largo con salchicha dentro?"):
-                                        leaf("hot dog")
-                                    else:
-                                        leaf("sandwich")
-                                    
-                                   else:
 
-                                # Comida casera
-                                    if ask("¿Es comida que normalmente se prepara en casa como plato principal?"):
-                                        if ask("¿Es un cereal que se cocina con agua y se sirve como acompañante?"):
-                                            leaf("arroz")
-                                        elif ask("¿Es una leguminosa redonda que se come cocida?"):
-                                            if ask("¿Es de color rojo o negro y se usa mucho en tacos y guisos?"):
-                                                leaf("frijoles")
+                                    # Comida rápida
+                                    if ask("¿Es comida rápida?"):
+                                        if ask("¿Es redonda con queso y toppings?"):
+                                            leaf("pizza")
+                                        elif ask("¿Es carne dentro de pan redondo?"):
+                                            leaf("hamburguesa")
+                                        elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
+                                            leaf("taco")
+                                        elif ask("¿Se come con palillos?"):
+                                            if ask("¿Es fideos en sopa?"):
+                                                leaf("ramen")
                                             else:
-                                                leaf("lentejas")
-                                        elif ask("¿Son fideos largos y delgados cocidos en agua?"):
-                                            leaf("espagueti")
-                                        elif ask("¿Es masa de maíz o harina, usada para tacos o acompañar alimentos?"):
-                                            leaf("tortilla")
+                                                leaf("sushi")
+                                        elif ask("¿Es un pan largo con salchicha dentro?"):
+                                            leaf("hot dog")
+                                        else:
+                                            leaf("sandwich")
 
                                     # Platillos
                                     elif ask("¿Es un platillo líquido que se come con cuchara?"):
@@ -387,21 +365,15 @@ def juego():
                                         if ask("¿Se come crudo y puede llevar aderezo?"):
                                             leaf("ensalada")
 
-                                    elif ask("¿Se come entre comidas o como acompañamiento ligero?"):
+                                    # Snacks (salados)
+                                    elif ask("¿Es un snack o botana?"):
+                                        if ask("¿Es salado y crujiente?"):
+                                            leaf("papas fritas")
 
-                                        if ask("¿Son granos de maíz inflados y salados?"):
-                                            leaf("palomitas")
-                                        else:
-                                            if ask("¿Es salado y crujiente?"):
-                                                leaf("papas fritas")
-                                            else:
-                                                if ask("¿Son frutos secos tostados y salados?"):
-                                                    leaf("cacahuates")
-
-                                # Bebida
                             else:  # bebida
 
                                 if ask("¿Es dulce?"):
+
                                     if ask("¿Es caliente?"):
                                         if ask("¿Contiene café?"):
                                             leaf("café")
@@ -412,20 +384,23 @@ def juego():
                                             leaf("refresco")
                                         else:
                                             leaf("jugo")
+
                                 else:  # no dulce
-                                    if ask("¿Es caliente?"):
-                                        if ask("¿Contiene café?"):
-                                            leaf("café")
-                                        else:
-                                            leaf("té")
-                                    else:
-                                        if ask("¿Es con gas?"):
-                                            if ask("¿Es una bebida alcohólica?"):
-                                                leaf("cerveza")
+
+                                        if ask("¿Es caliente?"):
+                                            if ask("¿Contiene café?"):
+                                                leaf("café")
                                             else:
-                                                leaf("refresco")
+                                                leaf("té")
                                         else:
-                                            leaf("agua")
+                                            if ask("¿Es con gas?"):
+                                                if ask("Es una bebida alcoholica"):
+                                                    leaf("cerveza")
+                                                else:
+                                                    leaf("refresco")
+                                            else:
+                                                leaf("agua")
+
                         else:
                             if ask("¿Se usa para el cuidado o higiene personal?"):
                                 # Cabello
@@ -691,23 +666,45 @@ def juego():
                     else:
                         # NATURAL no fabricado
                         if ask("¿Es una sustancia básica de la naturaleza?"):
-                            if ask("¿Es un líquido transparente que bebemos?"):
-                                leaf("agua")
-                            else:
-                                if ask("¿Es el gas que respiramos?"):
-                                    leaf("aire")
+
+                            # Elementos vs Minerales/Rocas
+                            if ask("¿Es un elemento químico puro (un solo tipo de átomo)?"):
+                                if ask("¿Es un gas a temperatura ambiente?"):
+                                    leaf("oxígeno")
+                                elif ask("¿Es un metal amarillo y valioso?"):
+                                    leaf("oro")
+                                elif ask("¿Es un no metal presente en grafito y diamante?"):
+                                    leaf("carbono")
                                 else:
-                                    if ask("¿Es la tierra del suelo?"):
-                                        leaf("tierra")
+                                    leaf("elemento químico")
+
+                            elif ask("¿Es un mineral o una roca?"):
+                                if ask("¿Es extremadamente duro y forma cristales transparentes?"):
+                                    leaf("diamante")
+                                else:
+                                    leaf("mineral")
+
+                            else:
+                                # Respaldo: sustancias naturales comunes
+                                if ask("¿Es un líquido transparente que bebemos?"):
+                                    leaf("agua")
+                                else:
+                                    if ask("¿Es el gas que respiramos?"):
+                                        leaf("aire")
                                     else:
-                                        if ask("¿Es fuego?"):
-                                            leaf("fuego")
+                                        if ask("¿Es la tierra del suelo?"):
+                                            leaf("tierra")
                                         else:
-                                            if ask("¿Son granos sueltos finos de roca?"):
-                                                leaf("arena")
+                                            if ask("¿Es fuego?"):
+                                                leaf("fuego")
                                             else:
-                                                leaf("roca")
+                                                if ask("¿Son granos sueltos finos de roca?"):
+                                                    leaf("arena")
+                                                else:
+                                                    leaf("roca")
+
                         else:
+                            # Espacio exterior / geografía / clima
                             if ask("¿Está en el espacio exterior?"):
                                 if ask("¿Brilla por sí mismo como una estrella?"):
                                     if ask("¿Es la estrella de nuestro sistema?"):
@@ -741,7 +738,7 @@ def juego():
                                                 else:
                                                     leaf("luna")
                             else:
-                                if ask("¿Es un lugar o forma del terreno o del agua en la Tierra?"):
+                                if ask("¿Es un lugar, forma del terreno o de agua en la Tierra?"):
                                     if ask("¿Es una elevación muy alta del terreno?"):
                                         leaf("montaña")
                                     else:
@@ -760,30 +757,54 @@ def juego():
                                                         if ask("¿Es una zona con muchos árboles?"):
                                                             leaf("bosque")
                                                         else:
-                                                            if ask("¿Esta caracterizado por contar con edificios?"):
-                                                                leaf("ciudad")
-                                                            else:
-                                                                if ask("¿A este en especifico van a estudiar?"):
-                                                                    leaf ("Escuela")
-                                                                else:
-                                                                    if ask("¿Es donde se atienden a heridos o enfermos?"):
-                                                                        leaf("Hospital")
-                                                                        if ask("¿En este lugar se proyectan peliculas?"):
-                                                                            leaf("Cine/Cinema")
-                                                                        else:
-                                                                            leaf("volcán")
+                                                            leaf("selva")
+                                                        
                                 else:
-                                    if ask("¿Es algo del clima o del cielo?"):
-                                        if ask("¿Es una nube en el cielo?"):
-                                            leaf("nube")
-                                        else:
-                                            if ask("¿Es agua que cae de las nubes?"):
+                                    if ask("¿Fenómeno que ocurre en la atmósfera (clima/meteorología)?"):
+                                        # 1) Precipitación
+                                        if ask("¿Cae desde las nubes?"):
+                                            if ask("¿Es agua líquida?"):
                                                 leaf("lluvia")
+                                            elif ask("¿Son cristales de hielo en copos?"):
+                                                leaf("nieve")
+                                            elif ask("¿Son bolitas de hielo duras?"):
+                                                leaf("granizo")
                                             else:
-                                                if ask("¿Es un rayo de electricidad en una tormenta?"):
-                                                    leaf("relámpago")
-                                                else:
-                                                    leaf("viento")
+                                                leaf("precipitación")
+
+                                        # 2) Nubes y niebla
+                                        elif ask("¿Es una masa visible de gotas o cristales en el cielo?"):
+                                            leaf("nube")
+                                        elif ask("¿Reduce mucho la visibilidad cerca del suelo?"):
+                                            leaf("neblina")
+
+                                        # 3) Fenómenos eléctricos
+                                        elif ask("¿Es una descarga eléctrica en una tormenta?"):
+                                            leaf("relámpago")
+                                        elif ask("¿Es el sonido que sigue a un relámpago?"):
+                                            leaf("trueno")
+
+                                        # 4) Viento y ciclones
+                                        elif ask("¿Se percibe como movimiento del aire?"):
+                                            if ask("¿Forma un embudo que toca el suelo?"):
+                                                leaf("tornado")
+                                            else:
+                                                leaf("viento")
+                                        elif ask("¿Es un ciclón tropical muy intenso?"):
+                                            leaf("huracán")
+
+                                        # 5) Fenómenos ópticos
+                                        elif ask("¿Aparece en el cielo con colores tras la lluvia?"):
+                                            leaf("arcoíris")
+
+                                        # 6) Tormentas
+                                        elif ask("¿Es una perturbación con lluvia y viento fuertes?"):
+                                            leaf("tormenta")
+
+                                        # 7) Default
+                                        else:
+                                            leaf("fenómeno atmosférico")
+
         else:
             # ABSTRACTO (no tangible)
 
