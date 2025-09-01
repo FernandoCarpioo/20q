@@ -57,73 +57,94 @@ def juego():
             if ask("¿Es un ser vivo?"):
                 # 3) Animal vs planta/hongo
                 if ask("¿Es un animal?"):
-                    # 4) Hábitat: acuático vs terrestre
-                    if ask("¿Vive la mayor parte del tiempo en el agua?"):
-                        # Mamífero marino vs pez
-                        if ask("¿Es un mamífero marino?"):
-                            if ask("¿Tiene hocico alargado y parece sonreír?"):
+                    if ask("¿Pasa la mayor parte del tiempo en el agua?"):
+                        # Mamíferos marinos vs peces
+                        if ask("¿Es un mamífero que respira aire por pulmones?"):
+                            if ask("¿Tiene hocico alargado y sparece sonreir?"):
                                 leaf("delfín")
-                            elif ask("¿Echa agua al respirar por sus aberturas nasales en la parte superior de la cabeza?"):
+                            elif ask("¿Echa agua al respirar por su espiráculo en la cabeza?"):
                                 leaf("ballena")
-                            elif ask("¿Tiene bigotes anchos y sensibles que sirven como órganos sensoriales para la caza?"):
+                            elif ask("¿Tiene bigotes sensibles para cazar presas?"):
                                 leaf("foca")
-                            elif ask("¿Tiene cuerpo grande, aplanado y se alimenta de pastos marinos?"):
+                            elif ask("¿Come pastos marinos y tiene cuerpo grande y aplanado?"):
                                 leaf("manatí")
-                            elif ask("¿Es pequeño y parecido a un delfín pero más robusto?"):
-                                leaf("marsopa")
                             elif ask("¿Tiene colmillos largos y piel gruesa?"):
                                 leaf("morsa")
                             else:
-                                leaf("nutria")  # Mamífero marino común que queda como opción final
+                                leaf("nutria")  
                         else:
-                            leaf("pez")
+                            if ask("¿Es un pez depredador, con dientes afilados y fuerte?"):
+                                leaf("tiburón")
+                            else:
+                                leaf("piraña")
                     else:
-                        # Terrestres: domésticos vs salvajes
-                        if ask("¿Vive con personas en casas o granjas?"):
+    
+                        if ask("¿Vive dentro de casas o granjas con personas?"):
                             # Mascotas vs animales de granja
                             if ask("¿Es una mascota común de casa?"):
-                                if ask("¿Es un canino doméstico?"):
+                                if ask("¿ladra?"):
                                     leaf("perro")
-                                elif ask("¿Es felino doméstico?"):
+                                elif ask("¿Es un felino?"):
                                     leaf("gato")
+                                elif ask("¿Es pequeño y se mantiene en jaula o acuario?"):
+                                    if ask("¿Tiene 4 patas y pelo?"):
+                                        leaf("hámster")
+                                    elif ask("¿Nada y tiene escamas?"):
+                                        leaf("pez")
+                                    else:
+                                        leaf("tortuga")
+                                elif ask("¿Vuela y canta en jaula?"):
+                                    leaf("periquito")
                                 else:
-                                    leaf("conejo")  # otra mascota frecuente
+                                    leaf("conejo")
                             else:
-                                if ask("¿Da leche para consumo humano?"):
+                                # Animales de granja
+                                if ask("¿Produce leche para el consumo humano?"):
                                     leaf("vaca")
-                                elif ask("¿Es un ave de granja que pone huevos?"):
-                                    leaf("gallina")
-                                elif ask("¿Se utiliza para trabajo en granja, transporte o carga?"):
-                                    leaf("caballo")
+                                elif ask("¿Es un ave que pone huevos?"):
+                                    if ask("¿Nace de un huevo, no vuela ni nada?"):
+                                        leaf("gallina")
+                                    else:
+                                        leaf("pato")
+                                elif ask("¿Se usa para transporte o carga y tiene pezuñas?"):
+                                    if ask("¿Es grande y fuerte?"):
+                                        leaf("caballo")
+                                    else:
+                                        leaf("burro")
                                 else:
-                                    leaf("cerdo")  # otro animal de granja común
+                                    leaf("cerdo")
                         else:
                             # Animales salvajes terrestres
-                            if ask("¿Se desplaza principalmente volando?"):
+                            if ask("¿Puede volar?"):
                                 if ask("¿Es un ave grande y depredadora?"):
                                     leaf("águila")
-                                elif ask("¿Es pequeño y bate las alas muy rápido?"):
+                                elif ask("¿Es muy pequeño y bate las alas muy rápido?"):
                                     leaf("colibrí")
+                                elif ask("¿Es tropical y colorido?"):
+                                    leaf("loro")
                                 else:
-                                    leaf("loro")  # ave tropical común
+                                    leaf("pingüino")
                             else:
-                                if ask("¿Es un animal salvaje parecido a un perro?"):
+                                if ask("¿Se parece a un perro domestico?"):
                                     leaf("lobo")
                                 elif ask("¿Es un felino grande con melena?"):
                                     leaf("león")
+                                elif ask("¿Es un felino grande, ágil y de pelaje rayado o manchado?"):
+                                    leaf("tigre/pantera")
                                 elif ask("¿Tiene trompa larga y colmillos visibles?"):
                                     leaf("elefante")
-                                elif ask("¿Es un animal muy alto con cuello largo que se alimenta de hojas altas?"):
+                                elif ask("¿Es muy alto, con cuello largo y come hojas de árboles altos?"):
                                     leaf("jirafa")
-                                elif ask("¿Tiene rayas negras y blancas?"):
+                                elif ask("¿Tiene rayas blancas y negras?"):
                                     leaf("cebra")
-                                elif ask("¿Es un felino salvaje de tamaño mediano y manchas?"):
-                                    leaf("leopardo")
                                 elif ask("¿Tiene pelaje grueso y come plantas y carne?"):
                                     leaf("oso")
+                                elif ask("¿Salta y vive en Australia?"):
+                                    leaf("canguro")
+                                elif ask("¿Es un marsupial que vive en árboles y come hojas de eucalipto?"):
+                                    leaf("koala")
                                 else:
-                                    leaf("rinoceronte")  # animal terrestre grande que queda como opción final
-
+                                    leaf("rinoceronte")
                 else:
                     # 3) Plantas y otros
                     if ask("¿Es una planta?"):
