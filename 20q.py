@@ -414,7 +414,8 @@ def juego():
                                             if ask("¿Tiene solamente pantalla?"):
                                                 leaf("Televisor")
                                             else:
-                                                leaf("Radio")
+                                                if ask("Tiene una antena fisica o necesita de una para funcionar?"):
+                                                    leaf("Radio")
                                 else:
                                     #6
                                     if ask("¿Tiene bocinas?"):
