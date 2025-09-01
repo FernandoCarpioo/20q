@@ -325,38 +325,60 @@ def juego():
                                                         leaf("sandía")
                                                     else:
                                                         leaf("papaya")
-
-                                    # Postres (no frutas)
                                     else:
-                                        if ask("¿Es frío y cremoso?"):
-                                            leaf("helado")
-                                        elif ask("¿Es dulce horneado?"):
-                                            leaf("pastel")
-                                        elif ask("¿Es pequeño y dulce?"):
-                                            leaf("galletas")
-                                        else:
-                                            leaf("gelatina")
+                                        if ask("¿Es dulce y se sirve como postre?"):
+                                            if ask("¿Es un cremoso hecho con huevo y leche sin hornear?"):
+                                                leaf("flan")
+                                            elif ask("¿Es masa frita en forma alargada y espolvoreada con azúcar?"):
+                                                leaf("churro")
+                                        else:   
+                                            if ask("¿Es frío y cremoso?"):
+                                                leaf("helado")
+                                            elif ask("¿Es dulce horneado?"):
+                                                leaf("pastel")
+                                            elif ask("¿Es pequeño y dulce?"):
+                                                leaf("galletas")
+                                            else:
+                                                leaf("gelatina")
+
 
                                 # Comida salada
                                 else:
-
-                                    # Comida rápida
-                                    if ask("¿Es comida rápida?"):
-                                        if ask("¿Es redonda con queso y toppings?"):
-                                            leaf("pizza")
-                                        elif ask("¿Es carne dentro de pan redondo?"):
-                                            leaf("hamburguesa")
-                                        elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
-                                            leaf("taco")
-                                        elif ask("¿Se come con palillos?"):
-                                            if ask("¿Es fideos en sopa?"):
-                                                leaf("ramen")
-                                            else:
-                                                leaf("sushi")
-                                        elif ask("¿Es un pan largo con salchicha dentro?"):
-                                            leaf("hot dog")
+                                   if ask("¿Es típica de restaurantes o puestos de comida rápida internacional?"):
+                                    if ask("¿Es redonda con queso y toppings?"):
+                                        leaf("pizza")
+                                    elif ask("¿Es carne dentro de pan redondo?"):
+                                        leaf("hamburguesa")
+                                    elif ask("¿Es mexicano y enrollado o doblado con una tortilla?"):
+                                        if ask("¿Es un plato mexicano envuelto en tortilla con relleno?"):
+                                            leaf("burrito")
                                         else:
-                                            leaf("sandwich")
+                                            leaf("taco")
+                                    elif ask("¿Se come con palillos?"):
+                                        if ask("¿Es fideos en sopa?"):
+                                            leaf("ramen")
+                                        else:
+                                            leaf("sushi")
+                                    elif ask("¿Es un pan largo con salchicha dentro?"):
+                                        leaf("hot dog")
+                                    else:
+                                        leaf("sandwich")
+                                    
+                                   else:
+
+                                # Comida casera
+                                    if ask("¿Es comida que normalmente se prepara en casa como plato principal?"):
+                                        if ask("¿Es un cereal que se cocina con agua y se sirve como acompañante?"):
+                                            leaf("arroz")
+                                        elif ask("¿Es una leguminosa redonda que se come cocida?"):
+                                            if ask("¿Es de color rojo o negro y se usa mucho en tacos y guisos?"):
+                                                leaf("frijoles")
+                                            else:
+                                                leaf("lentejas")
+                                        elif ask("¿Son fideos largos y delgados cocidos en agua?"):
+                                            leaf("espagueti")
+                                        elif ask("¿Es masa de maíz o harina, usada para tacos o acompañar alimentos?"):
+                                            leaf("tortilla")
 
                                     # Platillos
                                     elif ask("¿Es un platillo líquido que se come con cuchara?"):
@@ -365,15 +387,21 @@ def juego():
                                         if ask("¿Se come crudo y puede llevar aderezo?"):
                                             leaf("ensalada")
 
-                                    # Snacks (salados)
-                                    elif ask("¿Es un snack o botana?"):
-                                        if ask("¿Es salado y crujiente?"):
-                                            leaf("papas fritas")
+                                    elif ask("¿Se come entre comidas o como acompañamiento ligero?"):
 
+                                        if ask("¿Son granos de maíz inflados y salados?"):
+                                            leaf("palomitas")
+                                        else:
+                                            if ask("¿Es salado y crujiente?"):
+                                                leaf("papas fritas")
+                                            else:
+                                                if ask("¿Son frutos secos tostados y salados?"):
+                                                    leaf("cacahuates")
+
+                                # Bebida
                             else:  # bebida
 
                                 if ask("¿Es dulce?"):
-
                                     if ask("¿Es caliente?"):
                                         if ask("¿Contiene café?"):
                                             leaf("café")
@@ -384,23 +412,20 @@ def juego():
                                             leaf("refresco")
                                         else:
                                             leaf("jugo")
-
                                 else:  # no dulce
-
-                                        if ask("¿Es caliente?"):
-                                            if ask("¿Contiene café?"):
-                                                leaf("café")
-                                            else:
-                                                leaf("té")
+                                    if ask("¿Es caliente?"):
+                                        if ask("¿Contiene café?"):
+                                            leaf("café")
                                         else:
-                                            if ask("¿Es con gas?"):
-                                                if ask("Es una bebida alcoholica"):
-                                                    leaf("cerveza")
-                                                else:
-                                                    leaf("refresco")
+                                            leaf("té")
+                                    else:
+                                        if ask("¿Es con gas?"):
+                                            if ask("¿Es una bebida alcohólica?"):
+                                                leaf("cerveza")
                                             else:
-                                                leaf("agua")
-
+                                                leaf("refresco")
+                                        else:
+                                            leaf("agua")
                         else:
                             if ask("¿Se usa para el cuidado o higiene personal?"):
                                 # Cabello
